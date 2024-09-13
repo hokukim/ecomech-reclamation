@@ -6,9 +6,9 @@ using Stride.Core.Mathematics;
 using Stride.Engine;
 using Stride.Engine.Events;
 using Stride.Input;
-using ThirdPersonPlatformer.Core;
+using EcomechReclamation.Core;
 
-namespace ThirdPersonPlatformer.Player
+namespace EcomechReclamation.Player
 {
     public class PlayerInput : SyncScript
     {

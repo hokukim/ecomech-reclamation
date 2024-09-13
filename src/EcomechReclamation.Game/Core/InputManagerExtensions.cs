@@ -3,7 +3,7 @@
 using Stride.Core.Mathematics;
 using Stride.Input;
 
-namespace ThirdPersonPlatformer.Core
+namespace EcomechReclamation.Core
 {
     public static class InputManagerExtensions
     {

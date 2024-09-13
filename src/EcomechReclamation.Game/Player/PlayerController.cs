@@ -7,7 +7,7 @@ using Stride.Engine;
 using Stride.Engine.Events;
 using Stride.Physics;
 
-namespace ThirdPersonPlatformer.Player
+namespace EcomechReclamation.Player
 {
     public class PlayerController : SyncScript
     {

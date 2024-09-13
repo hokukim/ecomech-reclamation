@@ -3,7 +3,7 @@
 using Stride.Core.Mathematics;
 using Stride.Engine;
 
-namespace ThirdPersonPlatformer.Core
+namespace EcomechReclamation.Core
 {
     public static class Utils
     {

@@ -9,7 +9,7 @@ using Stride.Animations;
 using Stride.Engine;
 using Stride.Engine.Events;
 
-namespace ThirdPersonPlatformer.Player
+namespace EcomechReclamation.Player
 {
     public class AnimationController : SyncScript, IBlendTreeBuilder
     {

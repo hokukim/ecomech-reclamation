@@ -6,9 +6,9 @@ using Stride.Core.Mathematics;
 using Stride.Engine;
 using Stride.Engine.Events;
 using Stride.Physics;
-using ThirdPersonPlatformer.Player;
+using EcomechReclamation.Player;
 
-namespace ThirdPersonPlatformer.Camera
+namespace EcomechReclamation.Camera
 {
     public class ThirdPersonCamera : SyncScript
     {

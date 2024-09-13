@@ -2377,7 +2377,7 @@ Hierarchy:
                         Id: 2c90a40f-c257-42de-8808-e383912863ea
                         Model: 4efafe3d-ad3b-4917-bc77-100252b50595:Models/mannequinModel
                         Materials: {}
-                    978eabfaac453f4d9375495d32bc299f: !ThirdPersonPlatformer.Player.AnimationController,ThirdPersonPlatformer.Game
+                    978eabfaac453f4d9375495d32bc299f: !EcomechReclamation.Player.AnimationController,EcomechReclamation.Game
                         Id: faab8e97-45ac-4d3f-9375-495d32bc299f
                         AnimationComponent: ref!! c0b24758-fcad-47f3-a100-f94d96c5d325
                         AnimationIdle: 78734bd9-736f-4600-a527-8d8eae0bedf6:Animations/Idle
@@ -2908,11 +2908,11 @@ Hierarchy:
                                 Radius: 0.4
                                 LocalOffset: {X: 0.0, Y: 0.95, Z: 0.0}
                                 LocalRotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
-                    f722a19496166946a5d26eaf23d2ae03: !ThirdPersonPlatformer.Player.PlayerController,ThirdPersonPlatformer.Game
+                    f722a19496166946a5d26eaf23d2ae03: !EcomechReclamation.Player.PlayerController,EcomechReclamation.Game
                         Id: 94a122f7-1696-4669-a5d2-6eaf23d2ae03
                         MaxRunSpeed: 8.5
                         JumpReactionThreshold: 0.15
-                    809bf66aef692646891c293be4ca17b2: !ThirdPersonPlatformer.Player.PlayerInput,ThirdPersonPlatformer.Game
+                    809bf66aef692646891c293be4ca17b2: !EcomechReclamation.Player.PlayerInput,EcomechReclamation.Game
                         Id: 6af69b80-69ef-4626-891c-293be4ca17b2
                         MouseSensitivity: 1.0
                         DeadZone: 0.25
@@ -5133,7 +5133,7 @@ Hierarchy:
                         Name: null
                         Projection: Perspective
                         Slot: 9aeac611-d1f6-46da-a235-e20cc154e170
-                    cffbc9ddf95f8544a284e04ea2d27d8a: !ThirdPersonPlatformer.Camera.ThirdPersonCamera,ThirdPersonPlatformer.Game
+                    cffbc9ddf95f8544a284e04ea2d27d8a: !EcomechReclamation.Camera.ThirdPersonCamera,EcomechReclamation.Game
                         Id: ddc9fbcf-5ff9-4485-a284-e04ea2d27d8a
                         DefaultDistance: 6.0
                         MinimumDistance: 0.4

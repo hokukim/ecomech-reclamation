@@ -5,7 +5,7 @@
     <RuntimeIdentifier>win-x64</RuntimeIdentifier>
     <ApplicationIcon>Resources\Icon.ico</ApplicationIcon>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>ThirdPersonPlatformer</RootNamespace>
+    <RootNamespace>EcomechReclamation</RootNamespace>
 
     <OutputPath>..\Bin\Windows\$(Configuration)\</OutputPath>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
@@ -15,7 +15,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ThirdPersonPlatformer.Game\ThirdPersonPlatformer.Game.csproj" />
+    <ProjectReference Include="..\EcomechReclamation.Game\EcomechReclamation.Game.csproj" />
   </ItemGroup>
 
 </Project>
