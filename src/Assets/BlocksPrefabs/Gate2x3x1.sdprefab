@@ -18,7 +18,7 @@ Hierarchy:
                         Children: {}
                     fcdea559335181439cb352a95df34140: !ModelComponent
                         Id: 59a5defc-5133-4381-9cb3-52a95df34140
-                        Model: f5f45ba1-e50e-426b-a7c0-1f771cdf8984:Models/Gate2x3x1
+                        Model: f5f45ba1-e50e-426b-a7c0-1f771cdf8984:BlocksPrefabs/Models/Gate2x3x1
                         Materials:
                             ecd1b81c86e9114d86fcdf436455648f~0: acf01307-1fe3-430a-a931-613a9a841dfc:Materials/GridMTArc
                     87e4f56b172adb4f897ce1addcb0ec93: !StaticColliderComponent

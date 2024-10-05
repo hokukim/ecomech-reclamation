@@ -1,0 +1,21 @@
+!Animation
+Id: e64ef13a-414a-418b-a301-48e6e5564c6c
+SerializedVersion: {Stride: 2.0.0.0}
+Tags: []
+Source: !file G:/My Drive/Dev/Assets/Models/Animated/Magical Flower/magical flower_rigged_animated _blue crystal.fbx
+AnimationStack: 0
+ClipDuration:
+    Enabled: false
+    StartAnimationTime: 0:00:00:00.0000000
+    EndAnimationTime: 0:00:30:00.0000000
+PivotPosition: {X: 0.0, Y: 0.0, Z: 0.0}
+RepeatMode: LoopInfinite
+Type: !StandardAnimationAssetType {}
+Skeleton: b311f2bd-132f-40cb-b1ea-20fcd2cc9480:BlocksPrefabs/Models/magical flower_rigged_animated _blue crystal Skeleton
+RootMotion: false
+PreviewModel: 7455eea9-7ac3-493d-b29b-4a89034e17fe:BlocksPrefabs/Models/magical flower_rigged_animated _blue crystal
+AnimationTimeMinimum: 0:00:00:00.0000000
+AnimationTimeMaximum: 0:00:00:10.4166600
+~SourceHashes:
+    ? 320c138da37dcecccf3f0082d37ec77a~G:/My Drive/Dev/Assets/Models/Animated/Magical Flower/magical flower_rigged_animated _blue crystal.fbx
+    : a5f0055b15450b22a711431c7f1b6345

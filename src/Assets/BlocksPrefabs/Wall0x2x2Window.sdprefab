@@ -18,7 +18,7 @@ Hierarchy:
                         Children: {}
                     4d58a9788f77724c823418b8b7f17537: !ModelComponent
                         Id: 78a9584d-778f-4c72-8234-18b8b7f17537
-                        Model: 528a3af1-4122-40d9-84d2-564d32a84b8f:Models/Wall0x2x2Window
+                        Model: 528a3af1-4122-40d9-84d2-564d32a84b8f:BlocksPrefabs/Models/Wall0x2x2Window
                         Materials:
                             ec9522ed2e91694abd8663b5b8ada228~0: 9c8176f5-4a51-438e-886f-f558aa34cf84:Materials/GridMTWall
                     7788b92a4ec3be43bb9617ff231cfb59: !StaticColliderComponent

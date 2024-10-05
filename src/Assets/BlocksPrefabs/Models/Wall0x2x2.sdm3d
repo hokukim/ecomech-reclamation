@@ -1,8 +1,8 @@
 !Model
-Id: 9c89d9cc-1603-4788-8631-de0246265d2f
+Id: bf386da2-97a7-4bd5-8989-546026c2298b
 SerializedVersion: {Stride: 2.0.0.0}
 Tags: []
-Source: !file ../../Resources/Models/Stairs1x1x2.fbx
+Source: !file ../../../Resources/Models/Wall0x2x2.fbx
 Skeleton: null
 PivotPosition: {X: 0.0, Y: 0.0, Z: 0.0}
 Materials:
@@ -12,4 +12,4 @@ Materials:
             Material: f823db6b-5468-4929-ba6f-53338aa11fe4:Materials/GridMT
 Modifiers: {}
 ~SourceHashes:
-    4601841dc49c9b85d68c58d7045e9ce0~../../Resources/Models/Stairs1x1x2.fbx: eca2cc3b230370e156300d5a569950e8
+    a995acd21994017ef514271114e3e6e8~../../../Resources/Models/Wall0x2x2.fbx: 7c4c75fbf2e977a1afe3808fcb0c7208

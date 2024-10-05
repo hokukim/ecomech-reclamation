@@ -18,7 +18,7 @@ Hierarchy:
                         Children: {}
                     9824be4e570113419527810ca0e59df5: !ModelComponent
                         Id: 4ebe2498-0157-4113-9527-810ca0e59df5
-                        Model: 03d497e4-ef9f-4c67-b656-6c210ae19ab4:Models/Pillar0x5x0
+                        Model: 03d497e4-ef9f-4c67-b656-6c210ae19ab4:BlocksPrefabs/Models/Pillar0x5x0
                         Materials:
                             375be21b17b931489b7075f15158cba7~0: 40b06a0f-e62b-4b32-9e59-e832fedfcc4f:Materials/GridMTHazard
                     23c28da116b69348aa23606dcc7b416f: !StaticColliderComponent

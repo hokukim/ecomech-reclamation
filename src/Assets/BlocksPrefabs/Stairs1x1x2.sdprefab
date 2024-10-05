@@ -18,7 +18,7 @@ Hierarchy:
                         Children: {}
                     289202be5050af41832ce05e2d398d2c: !ModelComponent
                         Id: be029228-5050-41af-832c-e05e2d398d2c
-                        Model: 9c89d9cc-1603-4788-8631-de0246265d2f:Models/Stairs1x1x2
+                        Model: 9c89d9cc-1603-4788-8631-de0246265d2f:BlocksPrefabs/Models/Stairs1x1x2
                         Materials:
                             74dc3e7c6e633f46a3801edd86a197dd~0: e7c06a9e-85a4-4619-a836-8fe1803dadfc:Materials/GridMTStairs
                     01635891d64e2c4d98af82259f64e540: !StaticColliderComponent

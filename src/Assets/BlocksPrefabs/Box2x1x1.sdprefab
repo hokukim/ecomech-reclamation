@@ -18,7 +18,7 @@ Hierarchy:
                         Children: {}
                     d2619cccd5f24041a405add501ed26e6: !ModelComponent
                         Id: cc9c61d2-f2d5-4140-a405-add501ed26e6
-                        Model: 0b5ff43b-7270-4a71-b508-1e409b93498d:Models/Box2x1x1
+                        Model: 0b5ff43b-7270-4a71-b508-1e409b93498d:BlocksPrefabs/Models/Box2x1x1
                         Materials:
                             1f66d7610cd6dc4c9b32d800d312e162~0: ac39540b-779e-4e05-8856-a2419069cf2a:Materials/GridMTPlatform
                     6b416dc1a6679e41858a68dcecd16bc7: !StaticColliderComponent

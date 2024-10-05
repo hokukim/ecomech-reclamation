@@ -18,7 +18,7 @@ Hierarchy:
                         Children: {}
                     4b50702e8d933344b17a530059aebafc: !ModelComponent
                         Id: 2e70504b-938d-4433-b17a-530059aebafc
-                        Model: da8533c1-cb34-4b9e-97ef-9db33640bc56:Models/Floor1x0x1
+                        Model: da8533c1-cb34-4b9e-97ef-9db33640bc56:BlocksPrefabs/Models/Floor1x0x1
                         Materials:
                             1f66d7610cd6dc4c9b32d800d312e162~0: ac39540b-779e-4e05-8856-a2419069cf2a:Materials/GridMTPlatform
                     9fd04a146701174387ebf7ca57fcecc3: !StaticColliderComponent

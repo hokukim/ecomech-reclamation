@@ -6,7 +6,7 @@ ColliderShapes:
     dd1b93604c80c24fa67766d259000d5f: !ConvexHullColliderShapeDesc
         ConvexHulls: null
         ConvexHullsIndices: null
-        Model: 9c89d9cc-1603-4788-8631-de0246265d2f:Models/Stairs1x1x2
+        Model: 9c89d9cc-1603-4788-8631-de0246265d2f:BlocksPrefabs/Models/Stairs1x1x2
         LocalOffset: {X: 0.0, Y: 0.0, Z: 0.0}
         LocalRotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
         Scaling: {X: 1.0, Y: 1.0, Z: 1.0}

@@ -1,8 +1,8 @@
 !Model
-Id: 1c9c15cf-b7bb-4ed2-b8c3-c9a3d872626f
+Id: da8533c1-cb34-4b9e-97ef-9db33640bc56
 SerializedVersion: {Stride: 2.0.0.0}
 Tags: []
-Source: !file ../../Resources/Models/Box3x1x1.fbx
+Source: !file ../../../Resources/Models/Floor1x0x1.fbx
 Skeleton: null
 PivotPosition: {X: 0.0, Y: 0.0, Z: 0.0}
 Materials:
@@ -12,4 +12,4 @@ Materials:
             Material: f823db6b-5468-4929-ba6f-53338aa11fe4:Materials/GridMT
 Modifiers: {}
 ~SourceHashes:
-    a1f5cb1912602b1ed2fa8b4411b02437~../../Resources/Models/Box3x1x1.fbx: d04f55c381a74e658e8af67372e144ce
+    425201abe0578253053339f33d734267~../../../Resources/Models/Floor1x0x1.fbx: aae914da65f6d14c146ae1f41bba72a6

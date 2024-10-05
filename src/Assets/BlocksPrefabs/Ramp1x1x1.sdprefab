@@ -18,7 +18,7 @@ Hierarchy:
                         Children: {}
                     f8c751136a9aa643afa88b938510189c: !ModelComponent
                         Id: 1351c7f8-9a6a-43a6-afa8-8b938510189c
-                        Model: 1644bd50-f4d2-4866-b9cb-5a034eb33e56:Models/Ramp1x1x1
+                        Model: 1644bd50-f4d2-4866-b9cb-5a034eb33e56:BlocksPrefabs/Models/Ramp1x1x1
                         Materials:
                             74dc3e7c6e633f46a3801edd86a197dd~0: e7c06a9e-85a4-4619-a836-8fe1803dadfc:Materials/GridMTStairs
                     ef71e33350ba7041a0b72c62a58ca295: !StaticColliderComponent

@@ -1,0 +1,20 @@
+!Model
+Id: 7455eea9-7ac3-493d-b29b-4a89034e17fe
+SerializedVersion: {Stride: 2.0.0.0}
+Tags: []
+Source: !file G:/My Drive/Dev/Assets/Models/Animated/Magical Flower/magical flower_rigged_animated _blue crystal.fbx
+Skeleton: b311f2bd-132f-40cb-b1ea-20fcd2cc9480:BlocksPrefabs/Models/magical flower_rigged_animated _blue crystal Skeleton
+PivotPosition: {X: 0.0, Y: 0.0, Z: 0.0}
+Materials:
+    aa770b00c787fdfa466f288ca27fd5aa:
+        Name: Material.069
+        MaterialInstance:
+            Material: 30748aa1-2a84-488a-a483-59689986b457:BlocksPrefabs/Models/Material.069
+    ee8a18db837503a326e018f9db1fac07:
+        Name: Material.002
+        MaterialInstance:
+            Material: e1f15bf1-a69c-4b3e-a112-eea4f3d55365:BlocksPrefabs/Models/Material.002
+Modifiers: {}
+~SourceHashes:
+    ? 902e02423957d27124dff9881ea4051f~G:/My Drive/Dev/Assets/Models/Animated/Magical Flower/magical flower_rigged_animated _blue crystal.fbx
+    : a5f0055b15450b22a711431c7f1b6345

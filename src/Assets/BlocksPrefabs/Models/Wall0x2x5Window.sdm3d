@@ -1,8 +1,8 @@
 !Model
-Id: 757019ff-9a75-43c0-8ff1-8a9b259760c9
+Id: fcce269c-6e04-409f-882e-198f2a311a1e
 SerializedVersion: {Stride: 2.0.0.0}
 Tags: []
-Source: !file ../../Resources/Models/Gate1x2x1.fbx
+Source: !file ../../../Resources/Models/Wall0x2x5Window.fbx
 Skeleton: null
 PivotPosition: {X: 0.0, Y: 0.0, Z: 0.0}
 Materials:
@@ -12,4 +12,4 @@ Materials:
             Material: f823db6b-5468-4929-ba6f-53338aa11fe4:Materials/GridMT
 Modifiers: {}
 ~SourceHashes:
-    e86a1d4e5360513c1de03a63eec9d428~../../Resources/Models/Gate1x2x1.fbx: f59702a2cf214fed3d2358f4328a66cb
+    de0fa7e96c546294b2a80701c86798dd~../../../Resources/Models/Wall0x2x5Window.fbx: 41751578c9004d278f409a660961c13e
