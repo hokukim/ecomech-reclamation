@@ -144,6 +144,8 @@ Hierarchy:
                                 Radius: 7.0
                                 LocalOffset: {X: 1.0, Y: 0.0, Z: 0.0}
                                 LocalRotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                    53d5adba1502e8be4a71d66b7a2e09ce: !EcomechReclamation.CollisionTrigger,EcomechReclamation.Game
+                        Id: 9cf211e5-ba21-42de-8e92-0df1d09d8ac3
         -   Entity:
                 Id: 01c1b52e-7a12-4dba-a2a7-7e3c618c36f7
                 Name: Wall0x2x5Window (4)
