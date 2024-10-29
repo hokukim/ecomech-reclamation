@@ -1,11 +1,13 @@
 // Copyright (c) .NET Foundation and Contributors (https://dotnetfoundation.org/ & https://stride3d.net) and Silicon Studio Corp. (https://www.siliconstudio.co.jp)
 // Distributed under the MIT license. See the LICENSE.md file in the project root for more information.
-using System;
 using Stride.Core;
 using Stride.Core.Mathematics;
 using Stride.Engine;
 using Stride.Engine.Events;
 using Stride.Physics;
+using System;
+using System.Collections.Generic;
+using System.Collections.Specialized;
 
 namespace EcomechReclamation.Player
 {
@@ -27,6 +29,8 @@ namespace EcomechReclamation.Player
         private readonly EventReceiver<Vector3> moveDirectionEvent = new EventReceiver<Vector3>(PlayerInput.MoveDirectionEventKey);
 
         private readonly EventReceiver<bool> jumpEvent = new EventReceiver<bool>(PlayerInput.JumpEventKey);
+
+        private List<Entity> CollectibleEntityCollisions { get; } = [];
 
         /// <summary>
         /// Allow for some latency from the user input to make jumping appear more natural
@@ -65,6 +69,31 @@ namespace EcomechReclamation.Player
             Move(MaxRunSpeed);
 
             Jump();
+
+            int y = 300;
+            foreach (Entity entity in CollectibleEntityCollisions)
+            {
+                DebugText.Print(entity.Name, new(500, y));
+                y += 20;
+            }
+        }
+
+        public void CollectibleEntityCollision(Entity entity, NotifyCollectionChangedAction action)
+        {
+            bool hasEntity = CollectibleEntityCollisions.Contains(entity);
+
+            if (action == NotifyCollectionChangedAction.Add && !hasEntity)
+            {
+                CollectibleEntityCollisions.Add(entity);
+                return;
+            }
+
+            if (action == NotifyCollectionChangedAction.Remove
+                && hasEntity)
+            {
+                CollectibleEntityCollisions.Remove(entity);
+                return;
+            }
         }
 
         /// <summary>
@@ -127,7 +156,7 @@ namespace EcomechReclamation.Player
             moveDirectionEvent.TryReceive(out newMoveDirection);
 
             // Allow very simple inertia to the character to make animation transitions more fluid
-            moveDirection = moveDirection*0.85f + newMoveDirection *0.15f;
+            moveDirection = moveDirection * 0.85f + newMoveDirection * 0.15f;
 
             character.SetVelocity(moveDirection * speed);
 
@@ -137,7 +166,7 @@ namespace EcomechReclamation.Player
             // Character orientation
             if (moveDirection.Length() > 0.001)
             {
-                yawOrientation = MathUtil.RadiansToDegrees((float) Math.Atan2(-moveDirection.Z, moveDirection.X) + MathUtil.PiOverTwo);
+                yawOrientation = MathUtil.RadiansToDegrees((float)Math.Atan2(-moveDirection.Z, moveDirection.X) + MathUtil.PiOverTwo);
             }
             modelChildEntity.Transform.Rotation = Quaternion.RotationYawPitchRoll(MathUtil.DegreesToRadians(yawOrientation), 0, 0);
         }
