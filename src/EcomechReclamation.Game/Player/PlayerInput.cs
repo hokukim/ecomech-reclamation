@@ -1,12 +1,12 @@
 // Copyright (c) .NET Foundation and Contributors (https://dotnetfoundation.org/ & https://stride3d.net) and Silicon Studio Corp. (https://www.siliconstudio.co.jp)
 // Distributed under the MIT license. See the LICENSE.md file in the project root for more information.
-using System.Collections.Generic;
-using System.Linq;
+using EcomechReclamation.Core;
 using Stride.Core.Mathematics;
 using Stride.Engine;
 using Stride.Engine.Events;
 using Stride.Input;
-using EcomechReclamation.Core;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace EcomechReclamation.Player
 {
@@ -22,6 +22,8 @@ namespace EcomechReclamation.Player
 
         public static readonly EventKey<bool> JumpEventKey = new EventKey<bool>();
         private bool jumpButtonDown = false;
+
+        public static readonly EventKey InteractEventKey = new();
 
         public float DeadZone { get; set; } = 0.25f;
 
@@ -97,7 +99,7 @@ namespace EcomechReclamation.Player
                     cameraDirection = Vector2.Zero;
                 else
                     cameraDirection.Normalize();
-                
+
                 // Contrary to a mouse, driving camera rotation from a stick must be scaled by delta time.
                 // The amount of camera rotation with a stick is constant over time based on the tilt of the stick,
                 // Whereas mouse driven rotation is already constrained by time, it is driven by the difference in position from last *time* to this *time*.
@@ -108,12 +110,13 @@ namespace EcomechReclamation.Player
                 {
                     Input.LockMousePosition(false);
                 }
-                if (Input.IsMouseButtonReleased(MouseButton.Left) && Input.IsMousePositionLocked) {
+                if (Input.IsMouseButtonReleased(MouseButton.Left) && Input.IsMousePositionLocked)
+                {
                     Input.UnlockMousePosition();
                 }
                 if (Input.IsMousePositionLocked)
                 {
-                    cameraDirection += new Vector2(Input.MouseDelta.X, -Input.MouseDelta.Y)*MouseSensitivity;
+                    cameraDirection += new Vector2(Input.MouseDelta.X, -Input.MouseDelta.Y) * MouseSensitivity;
                 }
 
                 // Broadcast the camera direction directly, as a screen-space Vector2
@@ -131,6 +134,12 @@ namespace EcomechReclamation.Player
                 didJump |= (KeysJump.Any(key => Input.IsKeyPressed(key)));
 
                 JumpEventKey.Broadcast(didJump);
+            }
+
+            // Interacting.
+            if (Input.IsMouseButtonPressed(MouseButton.Right))
+            {
+                InteractEventKey.Broadcast();
             }
         }
     }

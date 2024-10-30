@@ -8,6 +8,7 @@ using Stride.Physics;
 using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
+using System.Text;
 
 namespace EcomechReclamation.Player
 {
@@ -30,7 +31,11 @@ namespace EcomechReclamation.Player
 
         private readonly EventReceiver<bool> jumpEvent = new EventReceiver<bool>(PlayerInput.JumpEventKey);
 
+        private EventReceiver InteractEvent { get; init; } = new(PlayerInput.InteractEventKey);
+
         private List<Entity> CollectibleEntityCollisions { get; } = [];
+
+        private List<Entity> Collectibles { get; } = [];
 
         /// <summary>
         /// Allow for some latency from the user input to make jumping appear more natural
@@ -70,14 +75,22 @@ namespace EcomechReclamation.Player
 
             Jump();
 
-            int y = 300;
-            foreach (Entity entity in CollectibleEntityCollisions)
+            Interact();
+            StringBuilder print = new();
+            print.Append("Inventory:");
+            foreach (Entity entity in Collectibles)
             {
-                DebugText.Print(entity.Name, new(500, y));
-                y += 20;
+                print.Append($"\n{entity.Name}");
             }
+
+            DebugText.Print(print.ToString(), new(500, 200));
         }
 
+        /// <summary>
+        /// This player controller entity has collided with a collectible entity.
+        /// </summary>
+        /// <param name="entity">Collectible entity.</param>
+        /// <param name="action">Collision action.</param>
         public void CollectibleEntityCollision(Entity entity, NotifyCollectionChangedAction action)
         {
             bool hasEntity = CollectibleEntityCollisions.Contains(entity);
@@ -169,6 +182,23 @@ namespace EcomechReclamation.Player
                 yawOrientation = MathUtil.RadiansToDegrees((float)Math.Atan2(-moveDirection.Z, moveDirection.X) + MathUtil.PiOverTwo);
             }
             modelChildEntity.Transform.Rotation = Quaternion.RotationYawPitchRoll(MathUtil.DegreesToRadians(yawOrientation), 0, 0);
+        }
+
+        private void Interact()
+        {
+            if (!InteractEvent.TryReceive())
+            {
+                return;
+            }
+
+            if (CollectibleEntityCollisions.Count > 0)
+            {
+                Entity entity = CollectibleEntityCollisions[0];
+                Collectibles.Add(entity);
+                CollectibleEntityCollisions.Remove(entity);
+
+                Entity.Scene.Entities.Remove(entity);
+            }
         }
     }
 }
