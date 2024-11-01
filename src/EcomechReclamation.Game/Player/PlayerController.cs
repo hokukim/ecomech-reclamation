@@ -33,7 +33,7 @@ namespace EcomechReclamation.Player
 
         private EventReceiver InteractEvent { get; init; } = new(PlayerInput.InteractEventKey);
 
-        private List<Entity> CollectibleEntityCollisions { get; } = [];
+        private Entity CollectibleEntity { get; set; } = null;
 
         private List<Entity> Collectibles { get; } = [];
 
@@ -49,6 +49,9 @@ namespace EcomechReclamation.Player
         // Allow some inertia to the movement
         private Vector3 moveDirection = Vector3.Zero;
 
+        Prefab FlowerPrefab { get; set; }
+        private Entity FlowerPrefabEntity { get; set; } = new("flower", new Vector3(-7.178f, 0, 2.539f));
+
         /// <summary>
         /// Called when the script is first initialized
         /// </summary>
@@ -63,6 +66,9 @@ namespace EcomechReclamation.Player
             if (character == null) throw new ArgumentException("Please add a CharacterComponent to the entity containing PlayerController!");
 
             modelChildEntity = Entity.GetChild(0);
+
+            FlowerPrefab = Content.Load<Prefab>("magical flower_rigged_animated _blue crystal");
+            AddFlower();
         }
 
         /// <summary>
@@ -93,18 +99,15 @@ namespace EcomechReclamation.Player
         /// <param name="action">Collision action.</param>
         public void CollectibleEntityCollision(Entity entity, NotifyCollectionChangedAction action)
         {
-            bool hasEntity = CollectibleEntityCollisions.Contains(entity);
-
-            if (action == NotifyCollectionChangedAction.Add && !hasEntity)
+            if (action == NotifyCollectionChangedAction.Add)
             {
-                CollectibleEntityCollisions.Add(entity);
+                CollectibleEntity = entity;
                 return;
             }
 
-            if (action == NotifyCollectionChangedAction.Remove
-                && hasEntity)
+            if (action == NotifyCollectionChangedAction.Remove)
             {
-                CollectibleEntityCollisions.Remove(entity);
+                CollectibleEntity = null;
                 return;
             }
         }
@@ -191,14 +194,35 @@ namespace EcomechReclamation.Player
                 return;
             }
 
-            if (CollectibleEntityCollisions.Count > 0)
+            if (CollectibleEntity == null)
             {
-                Entity entity = CollectibleEntityCollisions[0];
-                Collectibles.Add(entity);
-                CollectibleEntityCollisions.Remove(entity);
-
-                Entity.Scene.Entities.Remove(entity);
+                return;
             }
+
+            Collectibles.Add(CollectibleEntity);
+            RemoveEntity(CollectibleEntity);
+            CollectibleEntity = null;
+
+            // Add flower.
+            AddFlower();
+        }
+        private void AddFlower()
+        {
+            float x = new Random().Next() % 2 == 0 ? 1f : -1f;
+            FlowerPrefabEntity.Transform.Position.X += x;
+            foreach (Entity childEntity in FlowerPrefab.Instantiate()) { FlowerPrefabEntity.AddChild(childEntity); }
+            Entity.Scene.Entities.Add(FlowerPrefabEntity);
+        }
+
+        private void RemoveEntity(Entity entity)
+        {
+            foreach (Entity child in entity.GetChildren())
+            {
+                entity.RemoveChild(child);
+            }
+
+            Entity parent = entity.GetParent();
+            Entity.Scene.Entities.Remove(parent);
         }
     }
 }

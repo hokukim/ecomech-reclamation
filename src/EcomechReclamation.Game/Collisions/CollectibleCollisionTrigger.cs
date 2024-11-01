@@ -7,23 +7,25 @@ namespace EcomechReclamation.Collisions
 {
     public class CollectibleCollisionTrigger : SyncScript
     {
-        private StaticColliderComponent Collider { get; set; }
+        private RigidbodyComponent Rigidbody { get; set; }
 
         public override void Start()
         {
-            Collider = Entity.Get<StaticColliderComponent>();
-            Collider.Collisions.CollectionChanged += Collisions_CollectionChanged;
+            Rigidbody = Entity.Get<RigidbodyComponent>();
+            Rigidbody.Collisions.CollectionChanged += Collisions_CollectionChanged;
+            //Collider = Entity.Get<StaticColliderComponent>();
+            //Collider.Collisions.CollectionChanged += Collisions_CollectionChanged;
         }
 
         private void Collisions_CollectionChanged(object sender, Stride.Core.Collections.TrackingCollectionChangedEventArgs e)
         {
             Collision collision = (Collision)e.Item;
-            PhysicsComponent otherCollider = Collider == collision.ColliderA ? collision.ColliderB : collision.ColliderA;
+            PhysicsComponent otherCollider = Rigidbody == collision.ColliderA ? collision.ColliderB : collision.ColliderA;
 
             EntityComponent playerController = otherCollider.Entity.Components.FirstOrDefault(component => component.GetType() == typeof(PlayerController));
             if (playerController != null)
             {
-                (playerController as PlayerController).CollectibleEntityCollision(Collider.Entity, e.Action);
+                (playerController as PlayerController).CollectibleEntityCollision(Rigidbody.Entity, e.Action);
             }
         }
 

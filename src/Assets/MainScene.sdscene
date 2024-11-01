@@ -82,8 +82,8 @@ Hierarchy:
         - ref!! 5f548076-08bc-4ae8-ac9a-c391acdfd326
         - ref!! 26a8a83d-1048-4830-8905-aa83c16df8e5
         - ref!! 76771248-c30c-4247-a20e-69306cfdb1cd
-        - ref!! 014795d4-9937-49c2-b0f6-5e76ffb2d9f5
-        - ref!! 51a17cc9-2f63-4086-8adc-a7ac23f98305
+        - ref!! b396699b-9bf1-40d2-9fac-4a60223730ef
+        - ref!! e1b5a629-6b8c-4c68-8673-ba0e12a442c5
     Parts:
         -   Entity:
                 Id: 003ea996-d3d5-46e1-8f7c-e934945032b4
@@ -96,39 +96,6 @@ Hierarchy:
                         Scale: {X: 1.0, Y: 1.0, Z: 1.0}
                         Children:
                             c444819e77a60441a6144bd7bd8a4a23: ref!! 9e8144c4-a677-4104-a614-4bd7bd8a4a23
-        -   Entity:
-                Id: 014795d4-9937-49c2-b0f6-5e76ffb2d9f5
-                Name: magical flower_rigged_animated _blue crystal
-                Components:
-                    311e928182926008de42513ef5878037: !TransformComponent
-                        Id: 7ca2347a-06c1-4dac-b10a-c6ec6cf1fe3a
-                        Position: {X: -7.177995, Y: 0.2, Z: 2.539}
-                        Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
-                        Scale: {X: 0.08, Y: 0.08, Z: 0.08}
-                        Children: {}
-                    9782312a93a6f00255a4c34b445a8b68: !ModelComponent
-                        Id: 4dfb0d0f-3ff5-4134-b6a9-be0b6a989bc9
-                        Model: 7455eea9-7ac3-493d-b29b-4a89034e17fe:BlocksPrefabs/Models/magical flower_rigged_animated _blue crystal
-                        Materials:
-                            64d1ad396457d67c916a14694ce24588~0: 30748aa1-2a84-488a-a483-59689986b457:BlocksPrefabs/Models/Material.069
-                    1cc8972215978fc93fc390b6f6814068: !StaticColliderComponent
-                        Id: c4bd51de-3306-4ba9-9197-55811d22e227
-                        CanSleep: false
-                        Restitution: 0.0
-                        Friction: 0.5
-                        RollingFriction: 0.0
-                        CcdMotionThreshold: 0.0
-                        CcdSweptSphereRadius: 0.0
-                        IsTrigger: false
-                        AlwaysUpdateNaviMeshCache: false
-                        ColliderShapes:
-                            0cdfdf795be33b9840c587468deed88e: !CylinderColliderShapeDesc
-                                Height: 45.0
-                                Radius: 7.0
-                                LocalOffset: {X: 1.0, Y: 0.0, Z: 0.0}
-                                LocalRotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
-                    53d5adba1502e8be4a71d66b7a2e09ce: !EcomechReclamation.Collisions.CollectibleCollisionTrigger,EcomechReclamation.Game
-                        Id: 9cf211e5-ba21-42de-8e92-0df1d09d8ac3
         -   Entity:
                 Id: 01c1b52e-7a12-4dba-a2a7-7e3c618c36f7
                 Name: Wall0x2x5Window (4)
@@ -2397,36 +2364,6 @@ Hierarchy:
                         Children:
                             c444819e77a60441a6144bd7bd8a4a23: ref!! 6ab3b76f-3b33-4273-a2f6-26e1577035b8
         -   Entity:
-                Id: 51a17cc9-2f63-4086-8adc-a7ac23f98305
-                Name: magical flower_rigged_animated _blue crystal
-                Components:
-                    4608cdfab1ed2b12685ed8b452fa5bcb: !TransformComponent
-                        Id: 84792df4-6398-4505-a1a8-f3e38f1bd2fa
-                        Position: {X: -6.243258, Y: 0.0, Z: -1.091}
-                        Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
-                        Scale: {X: 0.05, Y: 0.05, Z: 0.05}
-                        Children: {}
-                    edca2d6507539f022e49e6b00119cb2a: !ModelComponent
-                        Id: a4d7afc1-03c1-40fc-b5f9-8b0aeb59bb06
-                        Model: 7455eea9-7ac3-493d-b29b-4a89034e17fe:BlocksPrefabs/Models/magical flower_rigged_animated _blue crystal
-                        Materials: {}
-                    1c2e3540996f5e5a4e1f63af0d5b3347: !StaticColliderComponent
-                        Id: 892d3d84-5828-4db1-ae52-79ead0ad74a3
-                        CanSleep: false
-                        Restitution: 0.0
-                        Friction: 0.5
-                        RollingFriction: 0.0
-                        CcdMotionThreshold: 0.0
-                        CcdSweptSphereRadius: 0.0
-                        IsTrigger: false
-                        AlwaysUpdateNaviMeshCache: false
-                        ColliderShapes:
-                            85f0751e5295c4a53d2dba2d0b4b0b31: !CylinderColliderShapeDesc
-                                Height: 20.0
-                                Radius: 6.0
-                                LocalOffset: {X: 1.0, Y: 10.0, Z: 0.0}
-                                LocalRotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
-        -   Entity:
                 Id: 51a86f4d-298c-4fc4-964b-de29f9a624fc
                 Name: MannequinModel
                 Components:
@@ -2440,7 +2377,7 @@ Hierarchy:
                         Id: 2c90a40f-c257-42de-8808-e383912863ea
                         Model: 4efafe3d-ad3b-4917-bc77-100252b50595:BlocksPrefabs/Models/mannequinModel
                         Materials: {}
-                    978eabfaac453f4d9375495d32bc299f: !EcomechReclamation.Player.AnimationController,EcomechReclamation.Game
+                    7274a07a05398873167ca8f7bf60db86: !EcomechReclamation.Player.AnimationController,EcomechReclamation.Game
                         Id: faab8e97-45ac-4d3f-9375-495d32bc299f
                         AnimationComponent: ref!! c0b24758-fcad-47f3-a100-f94d96c5d325
                         AnimationIdle: 78734bd9-736f-4600-a527-8d8eae0bedf6:Animations/Idle
@@ -2971,11 +2908,11 @@ Hierarchy:
                                 Radius: 0.4
                                 LocalOffset: {X: 0.0, Y: 0.95, Z: 0.0}
                                 LocalRotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
-                    f722a19496166946a5d26eaf23d2ae03: !EcomechReclamation.Player.PlayerController,EcomechReclamation.Game
+                    55cb00467edc6496006943f89e4f7d3d: !EcomechReclamation.Player.PlayerController,EcomechReclamation.Game
                         Id: 94a122f7-1696-4669-a5d2-6eaf23d2ae03
                         MaxRunSpeed: 8.5
                         JumpReactionThreshold: 0.15
-                    809bf66aef692646891c293be4ca17b2: !EcomechReclamation.Player.PlayerInput,EcomechReclamation.Game
+                    f19203ede30ba4e93977e99c01c63a28: !EcomechReclamation.Player.PlayerInput,EcomechReclamation.Game
                         Id: 6af69b80-69ef-4626-891c-293be4ca17b2
                         MouseSensitivity: 1.0
                         DeadZone: 0.25
@@ -5196,7 +5133,7 @@ Hierarchy:
                         Name: null
                         Projection: Perspective
                         Slot: 9aeac611-d1f6-46da-a235-e20cc154e170
-                    cffbc9ddf95f8544a284e04ea2d27d8a: !EcomechReclamation.Camera.ThirdPersonCamera,EcomechReclamation.Game
+                    67b165559ada83bbcb8d90d7fe3e186b: !EcomechReclamation.Camera.ThirdPersonCamera,EcomechReclamation.Game
                         Id: ddc9fbcf-5ff9-4485-a284-e04ea2d27d8a
                         DefaultDistance: 6.0
                         MinimumDistance: 0.4
@@ -5477,6 +5414,16 @@ Hierarchy:
                 BasePartAsset: 9366a46a-b5f9-4a8c-b8b4-a2e75839fd10:BlocksPrefabs/Wall0x2x5Window
                 BasePartId: 2afada92-6bdd-43d2-9806-ce0629937081
                 InstanceId: 8ec0d5c5-e187-4737-81f5-f8bef34ac1f5
+        -   Entity:
+                Id: b396699b-9bf1-40d2-9fac-4a60223730ef
+                Name: magical flower_rigged_animated _blue crystal
+                Components:
+                    51a00621bcdc7a37e94b4831eb571139: !TransformComponent
+                        Id: ea610c71-0e6b-4cc7-abbc-7024ebaf82bd
+                        Position: {X: -6.812625, Y: 0.0, Z: 1.8262372}
+                        Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                        Scale: {X: 1.0, Y: 1.0, Z: 1.0}
+                        Children: {}
         -   Entity:
                 Id: b4d7e451-80b1-4fd1-9427-b0b5ed622c7e
                 Name: Floor2x0x1
@@ -6779,6 +6726,16 @@ Hierarchy:
                         Scale: {X: 1.0, Y: 0.2, Z: 1.0}
                         Children:
                             e96f0faea3329947a94aed18021d4112: ref!! 3f5ec6ee-a71c-462c-a91a-9f8bf6763dc5
+        -   Entity:
+                Id: e1b5a629-6b8c-4c68-8673-ba0e12a442c5
+                Name: magical flower_rigged_animated _blue crystal
+                Components:
+                    829e6c084dfafafdabd618a0c68caac4: !TransformComponent
+                        Id: 1591958c-c782-45f8-8d94-923757864c4f
+                        Position: {X: -7.035993, Y: 0.0, Z: 2.5378861}
+                        Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                        Scale: {X: 1.0, Y: 1.0, Z: 1.0}
+                        Children: {}
         -   Folder: GlobalLights
             Entity:
                 Id: e1d761e6-634d-4773-8d81-75dfc8e8b1c4

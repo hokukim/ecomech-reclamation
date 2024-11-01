@@ -1,0 +1,47 @@
+!PrefabAsset
+Id: f95c1467-8dab-4bd3-ace1-f8153bac9072
+SerializedVersion: {Stride: 3.1.0.1}
+Tags: []
+Hierarchy:
+    RootParts:
+        - ref!! f0bab9bd-720d-4fbb-a803-43e3ab38a421
+    Parts:
+        -   Entity:
+                Id: f0bab9bd-720d-4fbb-a803-43e3ab38a421
+                Name: magical flower_rigged_animated _blue crystal
+                Components:
+                    311e928182926008de42513ef5878037: !TransformComponent
+                        Id: 65119794-85a8-4595-827a-3aad16570425
+                        Position: {X: 0.0, Y: 0.2, Z: 0.0}
+                        Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                        Scale: {X: 0.08, Y: 0.08, Z: 0.08}
+                        Children: {}
+                    9782312a93a6f00255a4c34b445a8b68: !ModelComponent
+                        Id: 072cfae7-2c5f-4e8d-a69c-309513172bd0
+                        Model: 7455eea9-7ac3-493d-b29b-4a89034e17fe:BlocksPrefabs/Models/magical flower_rigged_animated _blue crystal
+                        Materials:
+                            64d1ad396457d67c916a14694ce24588~0: 30748aa1-2a84-488a-a483-59689986b457:BlocksPrefabs/Models/Material.069
+                    cc0164355143da83a4c88fbf7621f241: !RigidbodyComponent
+                        Id: 6b4b2786-c788-417c-8b5e-00ccbab27d68
+                        CanSleep: false
+                        Restitution: 0.0
+                        Friction: 0.5
+                        RollingFriction: 0.0
+                        CcdMotionThreshold: 0.0
+                        CcdSweptSphereRadius: 0.0
+                        IsTrigger: false
+                        IsKinematic: true
+                        Mass: 1.0
+                        LinearDamping: 0.0
+                        AngularDamping: 0.0
+                        OverrideGravity: false
+                        Gravity: {X: 0.0, Y: 0.0, Z: 0.0}
+                        NodeName: null
+                        ColliderShapes:
+                            79baee7336d67b4f3d4e1db2b50f5412: !CylinderColliderShapeDesc
+                                Height: 10.0
+                                Radius: 2.0
+                                LocalOffset: {X: 0.0, Y: 0.0, Z: 0.0}
+                                LocalRotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                    4c654a7b5b75b76908c2a480a7fe287e: !EcomechReclamation.Collisions.CollectibleCollisionTrigger,EcomechReclamation.Game
+                        Id: 8cceceb1-195c-4ffe-ae34-5a4e7b5110bf
