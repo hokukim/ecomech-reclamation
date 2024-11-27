@@ -45,3 +45,9 @@ Hierarchy:
                                 LocalRotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
                     4c654a7b5b75b76908c2a480a7fe287e: !EcomechReclamation.Collisions.CollectibleCollisionTrigger,EcomechReclamation.Game
                         Id: 8cceceb1-195c-4ffe-ae34-5a4e7b5110bf
+                    194a19966b104626ec8a3d567748114e: !AnimationComponent
+                        Id: b7377f00-0861-4404-aa58-2579c59a6b4a
+                        Animations:
+                            30ab1554b5ca50434acb74ee356c0cce~Bloom: 9b75c6e8-bec6-4c5d-88dc-8d9477f4dcbe:Animations/magical flower_animated with crystal_Armature_ArmatureAction
+                    1f033927a46eec08095b8e11de3868a3: !EcomechReclamation.Animations.MagicalFlowerAnimation,EcomechReclamation.Game
+                        Id: 00b5d871-e58f-4532-8220-5e362229972b

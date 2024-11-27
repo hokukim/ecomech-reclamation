@@ -8,6 +8,7 @@ using Stride.Physics;
 using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
+using System.Linq;
 using System.Text;
 
 namespace EcomechReclamation.Player
@@ -206,11 +207,16 @@ namespace EcomechReclamation.Player
             // Add flower.
             AddFlower();
         }
+
         private void AddFlower()
         {
             float x = new Random().Next() % 2 == 0 ? 1f : -1f;
             FlowerPrefabEntity.Transform.Position.X += x;
-            foreach (Entity childEntity in FlowerPrefab.Instantiate()) { FlowerPrefabEntity.AddChild(childEntity); }
+            foreach (Entity childEntity in FlowerPrefab.Instantiate()
+                .Where(entity => FlowerPrefabEntity.FindChild(entity.Name) == null))
+            {
+                FlowerPrefabEntity.AddChild(childEntity);
+            }
             Entity.Scene.Entities.Add(FlowerPrefabEntity);
         }
 

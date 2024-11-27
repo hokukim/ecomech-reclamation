@@ -13,8 +13,6 @@ namespace EcomechReclamation.Collisions
         {
             Rigidbody = Entity.Get<RigidbodyComponent>();
             Rigidbody.Collisions.CollectionChanged += Collisions_CollectionChanged;
-            //Collider = Entity.Get<StaticColliderComponent>();
-            //Collider.Collisions.CollectionChanged += Collisions_CollectionChanged;
         }
 
         private void Collisions_CollectionChanged(object sender, Stride.Core.Collections.TrackingCollectionChangedEventArgs e)
