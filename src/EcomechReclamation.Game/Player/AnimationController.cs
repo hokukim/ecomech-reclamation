@@ -1,13 +1,13 @@
 // Copyright (c) .NET Foundation and Contributors (https://dotnetfoundation.org/ & https://stride3d.net) and Silicon Studio Corp. (https://www.siliconstudio.co.jp)
 // Distributed under the MIT license. See the LICENSE.md file in the project root for more information.
-using System;
+using Stride.Animations;
 using Stride.Core;
 using Stride.Core.Annotations;
 using Stride.Core.Collections;
 using Stride.Core.Mathematics;
-using Stride.Animations;
 using Stride.Engine;
 using Stride.Engine.Events;
+using System;
 
 namespace EcomechReclamation.Player
 {
@@ -34,6 +34,9 @@ namespace EcomechReclamation.Player
         [Display("Landing")]
         public AnimationClip AnimationJumpEnd { get; set; }
 
+        [Display("Harvesting")]
+        public AnimationClip AnimationHarvest { get; set; }
+
         [DataMemberRange(0, 1, 0.01, 0.1, 3)]
         [Display("Walk Threshold")]
         public float WalkThreshold { get; set; } = 0.25f;
@@ -47,6 +50,7 @@ namespace EcomechReclamation.Player
         private AnimationClipEvaluator animEvaluatorJumpStart;
         private AnimationClipEvaluator animEvaluatorJumpMid;
         private AnimationClipEvaluator animEvaluatorJumpEnd;
+        private AnimationClipEvaluator animEvaluatorHarvest;
         private double currentTime = 0;
 
         // Idle-Walk-Run lerp
@@ -61,6 +65,7 @@ namespace EcomechReclamation.Player
         private AnimationState state = AnimationState.Airborne;
         private readonly EventReceiver<float> runSpeedEvent = new EventReceiver<float>(PlayerController.RunSpeedEventKey);
         private readonly EventReceiver<bool> isGroundedEvent = new EventReceiver<bool>(PlayerController.IsGroundedEventKey);
+        private readonly EventReceiver harvestEvent = new EventReceiver(PlayerController.HarvestEventKey);
 
         float runSpeed;
 
@@ -89,6 +94,9 @@ namespace EcomechReclamation.Player
             if (AnimationJumpEnd == null)
                 throw new InvalidOperationException("Landing animation is not set");
 
+            if (AnimationHarvest == null)
+                throw new InvalidOperationException("Harvest animation is not set");
+
             // By setting a custom blend tree builder we can override the default behavior of the animation system
             //  Instead, BuildBlendTree(FastList<AnimationOperation> blendStack) will be called each frame
             AnimationComponent.BlendTreeBuilder = this;
@@ -99,6 +107,7 @@ namespace EcomechReclamation.Player
             animEvaluatorJumpStart = AnimationComponent.Blender.CreateEvaluator(AnimationJumpStart);
             animEvaluatorJumpMid = AnimationComponent.Blender.CreateEvaluator(AnimationJumpMid);
             animEvaluatorJumpEnd = AnimationComponent.Blender.CreateEvaluator(AnimationJumpEnd);
+            animEvaluatorHarvest = AnimationComponent.Blender.CreateEvaluator(AnimationHarvest);
 
             // Initial walk lerp
             walkLerpFactor = 0;
@@ -116,6 +125,7 @@ namespace EcomechReclamation.Player
             AnimationComponent.Blender.ReleaseEvaluator(animEvaluatorJumpStart);
             AnimationComponent.Blender.ReleaseEvaluator(animEvaluatorJumpMid);
             AnimationComponent.Blender.ReleaseEvaluator(animEvaluatorJumpEnd);
+            AnimationComponent.Blender.ReleaseEvaluator(animEvaluatorHarvest);
         }
 
         private void UpdateWalking()
@@ -188,7 +198,7 @@ namespace EcomechReclamation.Player
         {
             var speedFactor = 1;
             var currentTicks = TimeSpan.FromTicks((long)(currentTime * AnimationJumpEnd.Duration.Ticks));
-            var updatedTicks = currentTicks.Ticks + (long) (Game.DrawTime.Elapsed.Ticks * TimeFactor * speedFactor);
+            var updatedTicks = currentTicks.Ticks + (long)(Game.DrawTime.Elapsed.Ticks * TimeFactor * speedFactor);
 
             if (updatedTicks < AnimationJumpEnd.Duration.Ticks)
             {
@@ -207,6 +217,7 @@ namespace EcomechReclamation.Player
         {
             // State control
             runSpeedEvent.TryReceive(out runSpeed);
+
             bool isGroundedNewValue;
             isGroundedEvent.TryReceive(out isGroundedNewValue);
             if (isGrounded != isGroundedNewValue)
@@ -216,12 +227,19 @@ namespace EcomechReclamation.Player
                 state = (isGrounded) ? AnimationState.Landing : AnimationState.Jumping;
             }
 
+            if (harvestEvent.TryReceive())
+            {
+                currentTime = 0;
+                state = AnimationState.Harvesting;
+            }
+
             switch (state)
             {
-                case AnimationState.Walking:  UpdateWalking();  break;
-                case AnimationState.Jumping:  UpdateJumping();  break;
+                case AnimationState.Walking: UpdateWalking(); break;
+                case AnimationState.Jumping: UpdateJumping(); break;
                 case AnimationState.Airborne: UpdateAirborne(); break;
-                case AnimationState.Landing:  UpdateLanding();  break;
+                case AnimationState.Landing: UpdateLanding(); break;
+                case AnimationState.Harvesting: UpdateHarvesting(); break;
             }
         }
 
@@ -265,6 +283,13 @@ namespace EcomechReclamation.Player
                             TimeSpan.FromTicks((long)(currentTime * AnimationJumpEnd.Duration.Ticks))));
                     }
                     break;
+
+                case AnimationState.Harvesting:
+                    {
+                        blendStack.Add(AnimationOperation.NewPush(animEvaluatorHarvest,
+                            TimeSpan.FromTicks((long)(currentTime * AnimationHarvest.Duration.Ticks))));
+                    }
+                    break;
             }
         }
 
@@ -274,6 +299,26 @@ namespace EcomechReclamation.Player
             Jumping,
             Airborne,
             Landing,
+            Harvesting
+        }
+
+        private void UpdateHarvesting()
+        {
+            int speedFactor = 1;
+            TimeSpan currentTicks = TimeSpan.FromTicks((long)(currentTime * AnimationHarvest.Duration.Ticks));
+            long updatedTicks = currentTicks.Ticks + (long)(Game.DrawTime.Elapsed.Ticks * TimeFactor * speedFactor);
+
+            if (updatedTicks < AnimationHarvest.Duration.Ticks)
+            {
+                currentTicks = TimeSpan.FromTicks(updatedTicks);
+                currentTime = ((double)currentTicks.Ticks / (double)AnimationHarvest.Duration.Ticks);
+            }
+            else
+            {
+                state = AnimationState.Walking;
+                currentTime = 0;
+                UpdateWalking();
+            }
         }
     }
 }

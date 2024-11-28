@@ -22,6 +22,8 @@ namespace EcomechReclamation.Player
 
         public static readonly EventKey<float> RunSpeedEventKey = new EventKey<float>();
 
+        public static readonly EventKey HarvestEventKey = new();
+
         // This component is the physics representation of a controllable character
         private CharacterComponent character;
         private Entity modelChildEntity;
@@ -200,6 +202,10 @@ namespace EcomechReclamation.Player
                 return;
             }
 
+            // Animate character harvest.
+            HarvestEventKey.Broadcast();
+
+            // Collect item.
             Collectibles.Add(CollectibleEntity);
             RemoveEntity(CollectibleEntity);
             CollectibleEntity = null;
