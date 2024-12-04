@@ -2383,7 +2383,7 @@ Hierarchy:
                         AnimationRun: 2ff379d8-4df0-4ea9-a0d7-4d07a15a5dde:Animations/Run
                         AnimationJumpStart: 2eaec361-7d4c-499e-bcaf-a07f90b3312a:Animations/Jump_Start
                         AnimationJumpMid: c8dff12f-fd48-45de-a643-ef98be0c3b13:Animations/Jump_Loop
-                        AnimationJumpEnd: c564bf92-801e-4d9d-883c-3b8a4125c14f:Animations/Jump_End
+                        AnimationJumpEnd: 47fca132-fb1e-45a8-af34-4d1abe40b38b:Animations/Jump_End
                         AnimationHarvest: c564bf92-801e-4d9d-883c-3b8a4125c14f:Animations/Harvest
                         WalkThreshold: 0.25
                         TimeFactor: 1.0
@@ -2930,6 +2930,8 @@ Hierarchy:
                             47b7f2884469c9d74a4712034dba6f5a: Down
                         KeysJump:
                             23fe5ceb28bd9649fa594f451bbef24b: Space
+                    0ffb56f5e3dda73febd06180316d064d: !EcomechReclamation.HUD.InventoryController,EcomechReclamation.Game
+                        Id: 21d92823-cbe1-442f-a636-e6d49ce212de
         -   Folder: Platform/Grid
             Entity:
                 Id: 605ce261-0f03-4563-b2d4-4ed4a7d4cd89

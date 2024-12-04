@@ -9,7 +9,7 @@ ClipDuration:
     StartAnimationTime: 0:00:00:00.0000000
     EndAnimationTime: 0:00:30:00.0000000
 PivotPosition: {X: 0.0, Y: 0.0, Z: 0.0}
-RepeatMode: LoopInfinite
+RepeatMode: PlayOnce
 Type: !StandardAnimationAssetType {}
 Skeleton: b311f2bd-132f-40cb-b1ea-20fcd2cc9480:BlocksPrefabs/Models/magical flower_rigged_animated _blue crystal Skeleton
 RootMotion: false
