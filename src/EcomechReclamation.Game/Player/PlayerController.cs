@@ -9,7 +9,6 @@ using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Linq;
-using System.Text;
 
 namespace EcomechReclamation.Player
 {
@@ -85,14 +84,15 @@ namespace EcomechReclamation.Player
             Jump();
 
             Interact();
-            StringBuilder print = new();
-            print.Append("Inventory:");
-            foreach (Entity entity in Collectibles)
-            {
-                print.Append($"\n{entity.Name}");
-            }
+            // TODO: Send collected items to inventory (#10).
+            //StringBuilder print = new();
+            //print.Append("Inventory:");
+            //foreach (Entity entity in Collectibles)
+            //{
+            //    print.Append($"\n{entity.Name}");
+            //}
 
-            DebugText.Print(print.ToString(), new(500, 200));
+            //DebugText.Print(print.ToString(), new(500, 200));
         }
 
         /// <summary>

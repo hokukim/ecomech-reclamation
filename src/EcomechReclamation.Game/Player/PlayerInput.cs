@@ -25,6 +25,8 @@ namespace EcomechReclamation.Player
 
         public static readonly EventKey InteractEventKey = new();
 
+        public static readonly EventKey ToggleInventoryEventKey = new();
+
         public float DeadZone { get; set; } = 0.25f;
 
         public CameraComponent Camera { get; set; }
@@ -140,6 +142,12 @@ namespace EcomechReclamation.Player
             if (Input.IsMouseButtonPressed(MouseButton.Right))
             {
                 InteractEventKey.Broadcast();
+            }
+
+            // Toggle inventory.
+            if (Input.IsKeyPressed(Keys.I))
+            {
+                ToggleInventoryEventKey.Broadcast();
             }
         }
     }
