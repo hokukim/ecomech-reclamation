@@ -23,6 +23,11 @@ namespace EcomechReclamation.Player
 
         public static readonly EventKey HarvestEventKey = new();
 
+        /// <summary>
+        /// Triggered when an entity is collected.
+        /// </summary>
+        public static readonly EventKey<Entity> CollectEntityEventKey = new();
+
         // This component is the physics representation of a controllable character
         private CharacterComponent character;
         private Entity modelChildEntity;
@@ -34,8 +39,6 @@ namespace EcomechReclamation.Player
         private readonly EventReceiver<bool> jumpEvent = new EventReceiver<bool>(PlayerInput.JumpEventKey);
 
         private EventReceiver InteractEvent { get; init; } = new(PlayerInput.InteractEventKey);
-
-        private Entity CollectibleEntity { get; set; } = null;
 
         private List<Entity> Collectibles { get; } = [];
 
@@ -84,15 +87,6 @@ namespace EcomechReclamation.Player
             Jump();
 
             Interact();
-            // TODO: Send collected items to inventory (#10).
-            //StringBuilder print = new();
-            //print.Append("Inventory:");
-            //foreach (Entity entity in Collectibles)
-            //{
-            //    print.Append($"\n{entity.Name}");
-            //}
-
-            //DebugText.Print(print.ToString(), new(500, 200));
         }
 
         /// <summary>
@@ -104,13 +98,13 @@ namespace EcomechReclamation.Player
         {
             if (action == NotifyCollectionChangedAction.Add)
             {
-                CollectibleEntity = entity;
+                Collectibles.Add(entity);
                 return;
             }
 
             if (action == NotifyCollectionChangedAction.Remove)
             {
-                CollectibleEntity = null;
+                Collectibles.Remove(entity);
                 return;
             }
         }
@@ -197,18 +191,19 @@ namespace EcomechReclamation.Player
                 return;
             }
 
-            if (CollectibleEntity == null)
+            if (Collectibles.Count == 0)
             {
+                // Nothing to collect.
                 return;
             }
 
             // Animate character harvest.
             HarvestEventKey.Broadcast();
 
-            // Collect item.
-            Collectibles.Add(CollectibleEntity);
-            RemoveEntity(CollectibleEntity);
-            CollectibleEntity = null;
+            // Add most recent item to inventory.
+            Entity entity = Collectibles[^1];
+            CollectEntityEventKey.Broadcast(entity);
+            RemoveEntity(entity);
 
             // Add flower.
             AddFlower();
