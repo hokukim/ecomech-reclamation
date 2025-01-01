@@ -2,6 +2,7 @@
 using Stride.Engine;
 using Stride.Engine.Events;
 using Stride.UI;
+using Stride.UI.Controls;
 using Stride.UI.Panels;
 using System.Collections.Generic;
 using System.Text;
@@ -83,6 +84,10 @@ namespace EcomechReclamation.HUD
             }
 
             Collectibles.Add(entity);
+            TextBlock textBlock = (TextBlock)InventoryGrid.Children[0];
+            textBlock.Text = entity.Name;
+
+            InventoryGrid.Children.Add(textBlock);
         }
     }
 }

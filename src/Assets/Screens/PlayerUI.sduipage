@@ -8,26 +8,6 @@ Hierarchy:
     RootParts:
         - !Grid ref!! 6befcc24-a656-4bf8-92a0-91f75e67fdc6
     Parts:
-        -   UIElement: !Button
-                Id: 2a8c2cf1-0b11-4605-ad28-edcb54d00e59
-                DependencyProperties: {}
-                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
-                DrawLayerNumber: 2
-                Width: 160.0
-                Height: 129.0
-                HorizontalAlignment: Left
-                VerticalAlignment: Top
-                Margin: {}
-                Name: 
-                Content: !TextBlock ref!! f56fb27d-5320-454a-bca8-276cb57099e6
-                PressedImage: !SpriteFromSheet
-                    Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
-                    CurrentFrame: 2
-                NotPressedImage: !SpriteFromSheet
-                    Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
-                    CurrentFrame: 1
-                MouseOverImage: !SpriteFromSheet
-                    Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
         -   UIElement: !Grid
                 Id: 452afe4e-81b3-4a66-bf6a-2592ac813a67
                 DependencyProperties: {}
@@ -39,17 +19,10 @@ Hierarchy:
                 Margin: {Left: 182.0, Right: 164.0}
                 Name: InventoryGrid
                 Children:
-                    7be075c9542a32ae70ffbf213bce3558: !Button ref!! 2a8c2cf1-0b11-4605-ad28-edcb54d00e59
-                    331b685d1f21e5da85e801aeb04d3e39: !ImageElement ref!! 58311e32-5222-4a8b-90f6-9760afc0c42e
+                    42b35e0da44eeca5ee576257dec34f0b: !TextBlock ref!! bff64078-dcb1-4c35-b339-a67fddefbbc5
                 RowDefinitions: {}
                 ColumnDefinitions: {}
                 LayerDefinitions: {}
-        -   UIElement: !ImageElement
-                Id: 58311e32-5222-4a8b-90f6-9760afc0c42e
-                DependencyProperties: {}
-                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
-                Margin: {}
-                Color: {R: 255, G: 255, B: 255, A: 255}
         -   UIElement: !Grid
                 Id: 6befcc24-a656-4bf8-92a0-91f75e67fdc6
                 DependencyProperties: {}
@@ -62,15 +35,15 @@ Hierarchy:
                 ColumnDefinitions: {}
                 LayerDefinitions: {}
         -   UIElement: !TextBlock
-                Id: f56fb27d-5320-454a-bca8-276cb57099e6
+                Id: bff64078-dcb1-4c35-b339-a67fddefbbc5
                 DependencyProperties: {}
-                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
-                Width: 146.0
-                Height: 68.99414
-                HorizontalAlignment: Center
-                VerticalAlignment: Center
+                BackgroundColor: {R: 0, G: 63, B: 255, A: 0}
+                Width: 149.0
+                Height: 134.0
+                HorizontalAlignment: Left
+                VerticalAlignment: Top
                 Margin: {}
-                Text: Click me!
+                Text: Hello
                 Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
-                TextSize: 32.0
+                TextSize: 20.0
                 TextColor: {R: 240, G: 240, B: 240, A: 255}
