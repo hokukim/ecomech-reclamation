@@ -1,0 +1,76 @@
+!UIPageAsset
+Id: 1ff1de1f-1f0c-487f-a3ea-96ed77702ef1
+SerializedVersion: {Stride: 2.1.0.1}
+Tags: []
+Design:
+    Resolution: {X: 1280.0, Y: 720.0, Z: 1000.0}
+Hierarchy:
+    RootParts:
+        - !Grid ref!! 6befcc24-a656-4bf8-92a0-91f75e67fdc6
+    Parts:
+        -   UIElement: !Button
+                Id: 2a8c2cf1-0b11-4605-ad28-edcb54d00e59
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                DrawLayerNumber: 2
+                Width: 160.0
+                Height: 129.0
+                HorizontalAlignment: Left
+                VerticalAlignment: Top
+                Margin: {}
+                Name: 
+                Content: !TextBlock ref!! f56fb27d-5320-454a-bca8-276cb57099e6
+                PressedImage: !SpriteFromSheet
+                    Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
+                    CurrentFrame: 2
+                NotPressedImage: !SpriteFromSheet
+                    Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
+                    CurrentFrame: 1
+                MouseOverImage: !SpriteFromSheet
+                    Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
+        -   UIElement: !Grid
+                Id: 452afe4e-81b3-4a66-bf6a-2592ac813a67
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Visibility: Hidden
+                Width: 934.0
+                Height: 299.0
+                VerticalAlignment: Bottom
+                Margin: {Left: 182.0, Right: 164.0}
+                Name: InventoryGrid
+                Children:
+                    7be075c9542a32ae70ffbf213bce3558: !Button ref!! 2a8c2cf1-0b11-4605-ad28-edcb54d00e59
+                    331b685d1f21e5da85e801aeb04d3e39: !ImageElement ref!! 58311e32-5222-4a8b-90f6-9760afc0c42e
+                RowDefinitions: {}
+                ColumnDefinitions: {}
+                LayerDefinitions: {}
+        -   UIElement: !ImageElement
+                Id: 58311e32-5222-4a8b-90f6-9760afc0c42e
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Margin: {}
+                Color: {R: 255, G: 255, B: 255, A: 255}
+        -   UIElement: !Grid
+                Id: 6befcc24-a656-4bf8-92a0-91f75e67fdc6
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Margin: {}
+                Name: HUDGrid
+                Children:
+                    6c8a469aed2d5659bc73cf871ffd015c: !Grid ref!! 452afe4e-81b3-4a66-bf6a-2592ac813a67
+                RowDefinitions: {}
+                ColumnDefinitions: {}
+                LayerDefinitions: {}
+        -   UIElement: !TextBlock
+                Id: f56fb27d-5320-454a-bca8-276cb57099e6
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Width: 146.0
+                Height: 68.99414
+                HorizontalAlignment: Center
+                VerticalAlignment: Center
+                Margin: {}
+                Text: Click me!
+                Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
+                TextSize: 32.0
+                TextColor: {R: 240, G: 240, B: 240, A: 255}

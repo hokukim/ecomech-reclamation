@@ -1,6 +1,8 @@
 ﻿using EcomechReclamation.Player;
 using Stride.Engine;
 using Stride.Engine.Events;
+using Stride.UI;
+using Stride.UI.Panels;
 using System.Collections.Generic;
 using System.Text;
 
@@ -8,8 +10,6 @@ namespace EcomechReclamation.HUD
 {
     public class InventoryController : SyncScript
     {
-        private int Nums = 0;
-
         /// <summary>
         /// Indicates if the inventory UI is open.
         /// </summary>
@@ -20,6 +20,9 @@ namespace EcomechReclamation.HUD
         /// </summary>
         private EventReceiver ToggleInventoryEvent { get; init; } = new(PlayerInput.ToggleInventoryEventKey);
 
+        /// <summary>
+        /// Receives <see cref="CollectEntityEventKey"/> events.
+        /// </summary>
         private EventReceiver<Entity> CollectEntityEvent { get; init; } = new(PlayerController.CollectEntityEventKey);
 
         /// <summary>
@@ -27,9 +30,17 @@ namespace EcomechReclamation.HUD
         /// </summary>
         private List<Entity> Collectibles { get; } = [];
 
+        /// <summary>
+        /// Inventory grid UI.
+        /// </summary>
+        private Grid InventoryGrid { get; set; }
+
         public override void Start()
         {
             base.Start();
+
+            UIComponent playerUI = Entity.Get<UIComponent>();
+            InventoryGrid = (Grid)playerUI.Page.RootElement.FindName(nameof(InventoryGrid));
         }
 
         public override void Update()
@@ -45,12 +56,10 @@ namespace EcomechReclamation.HUD
         {
             if (ToggleInventoryEvent.TryReceive())
             {
-                IsOpen = !IsOpen;
-
-                if (IsOpen) { Nums++; }
+                InventoryGrid.Visibility = InventoryGrid.Visibility == Visibility.Visible ? Visibility.Hidden : Visibility.Visible;
             }
 
-            if (!IsOpen)
+            if (InventoryGrid.Visibility == Visibility.Hidden)
             {
                 return;
             }
