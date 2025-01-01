@@ -2930,13 +2930,13 @@ Hierarchy:
                             47b7f2884469c9d74a4712034dba6f5a: Down
                         KeysJump:
                             23fe5ceb28bd9649fa594f451bbef24b: Space
-                    0ffb56f5e3dda73febd06180316d064d: !EcomechReclamation.HUD.InventoryController,EcomechReclamation.Game
-                        Id: 21d92823-cbe1-442f-a636-e6d49ce212de
                     82f4ac12a23e2c866e17147a829cbc15: !UIComponent
                         Id: 496fc4f3-22f0-4dcb-ba13-d755b5877632
                         Page: 1ff1de1f-1f0c-487f-a3ea-96ed77702ef1:Screens/PlayerUI
                         Resolution: {X: 1280.0, Y: 720.0, Z: 1000.0}
                         Size: {X: 1.28, Y: 0.72, Z: 1.0}
+                    ab0f994fa874302695c4397475bb57ab: !EcomechReclamation.InventoryController,EcomechReclamation.Game
+                        Id: 44a19a17-fa50-44b5-b8ac-da9abc716a23
         -   Folder: Platform/Grid
             Entity:
                 Id: 605ce261-0f03-4563-b2d4-4ed4a7d4cd89
