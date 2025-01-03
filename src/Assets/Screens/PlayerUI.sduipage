@@ -28,13 +28,14 @@ Hierarchy:
                 BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
                 Visibility: Hidden
                 DrawLayerNumber: 2
-                Width: 100.0
-                Height: 100.0
-                Margin: {Left: 400.0, Right: 400.0}
+                Width: 60.0
+                Height: 60.0
+                HorizontalAlignment: Left
+                Margin: {Left: 240.0}
                 MaximumWidth: 3.4028235E+38
                 MaximumHeight: 3.4028235E+38
                 MaximumDepth: 3.4028235E+38
-                Name: Slot5
+                Name: 
                 Content: !TextBlock ref!! 6e3bf721-5d45-4982-a508-37611ccefa15
                 PressedImage: !SpriteFromSheet
                     Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
@@ -50,14 +51,13 @@ Hierarchy:
                 BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
                 Visibility: Hidden
                 DrawLayerNumber: 2
-                Width: 100.0
-                Height: 100.0
-                HorizontalAlignment: Right
-                Margin: {Right: 300.0}
+                Width: 60.0
+                Height: 60.0
+                Margin: {Left: 300.0, Right: 360.0}
                 MaximumWidth: 3.4028235E+38
                 MaximumHeight: 3.4028235E+38
                 MaximumDepth: 3.4028235E+38
-                Name: Slot6
+                Name: 
                 Content: !TextBlock ref!! 7e893b8d-1426-45ee-a3a5-0162b84fcdf0
                 PressedImage: !SpriteFromSheet
                     Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
@@ -81,13 +81,36 @@ Hierarchy:
                 Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
                 TextSize: 20.0
                 TextColor: {R: 240, G: 240, B: 240, A: 255}
+        -   UIElement: !Button
+                Id: 3b7949ba-cc5c-40f2-b983-b46cbcbc5a9e
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Visibility: Hidden
+                DrawLayerNumber: 2
+                Width: 60.0
+                Height: 60.0
+                HorizontalAlignment: Right
+                Margin: {Right: 60.0}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: 
+                Content: !TextBlock ref!! a072adaf-35fc-483e-bc4e-9875fb5f219b
+                PressedImage: !SpriteFromSheet
+                    Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
+                    CurrentFrame: 2
+                NotPressedImage: !SpriteFromSheet
+                    Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
+                    CurrentFrame: 1
+                MouseOverImage: !SpriteFromSheet
+                    Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
         -   UIElement: !Grid
                 Id: 452afe4e-81b3-4a66-bf6a-2592ac813a67
                 DependencyProperties: {}
                 BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
                 Visibility: Hidden
-                Width: 900.0
-                Height: 100.0
+                Width: 720.0
+                Height: 60.0
                 VerticalAlignment: Bottom
                 Margin: {Left: 211.0, Right: 169.0, Bottom: 51.0}
                 MaximumWidth: 3.4028235E+38
@@ -104,6 +127,9 @@ Hierarchy:
                     4a944edbaeb16998c278752684381886: !Button ref!! a82157ba-d465-4aac-851d-6fe86c837c40
                     45382bdf0106218bc22235383b91f39c: !Button ref!! a02e1890-49d2-4857-a5bb-7e3c0e4e0746
                     b49959ab0f05938b667936ba3ba1a7ee: !Button ref!! bd2b8836-28fd-45f0-877a-5afdae0f5391
+                    4f84719d18f9256abb063793a2262b79: !Button ref!! 63e78c95-ef70-47d2-8cdd-f1ed9a3276e1
+                    7a844f5f05346a7ff87dca5c29232fff: !Button ref!! 3b7949ba-cc5c-40f2-b983-b46cbcbc5a9e
+                    8faa92b546a056f15361d4225e3279ca: !Button ref!! b978156c-86a4-4f8b-9dcf-1b7cac22dde1
                 RowDefinitions: {}
                 ColumnDefinitions: {}
                 LayerDefinitions: {}
@@ -122,19 +148,42 @@ Hierarchy:
                 TextSize: 20.0
                 TextColor: {R: 240, G: 240, B: 240, A: 255}
         -   UIElement: !Button
+                Id: 63e78c95-ef70-47d2-8cdd-f1ed9a3276e1
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Visibility: Hidden
+                DrawLayerNumber: 2
+                Width: 60.0
+                Height: 60.0
+                HorizontalAlignment: Right
+                Margin: {Right: 120.0}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: 
+                Content: !TextBlock ref!! 8c74b615-e667-413b-a62a-ec61dc47eba8
+                PressedImage: !SpriteFromSheet
+                    Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
+                    CurrentFrame: 2
+                NotPressedImage: !SpriteFromSheet
+                    Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
+                    CurrentFrame: 1
+                MouseOverImage: !SpriteFromSheet
+                    Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
+        -   UIElement: !Button
                 Id: 69d2bda5-54c8-4469-b0ca-cf52fa6667a4
                 DependencyProperties: {}
                 BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
                 Visibility: Hidden
                 DrawLayerNumber: 2
-                Width: 100.0
-                Height: 100.0
+                Width: 60.0
+                Height: 60.0
                 HorizontalAlignment: Left
                 Margin: {}
                 MaximumWidth: 3.4028235E+38
                 MaximumHeight: 3.4028235E+38
                 MaximumDepth: 3.4028235E+38
-                Name: Slot1
+                Name: 
                 Content: !TextBlock ref!! 6162259b-a100-461d-b6e9-6fb99613a4de
                 PressedImage: !SpriteFromSheet
                     Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
@@ -200,20 +249,48 @@ Hierarchy:
                 Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
                 TextSize: 20.0
                 TextColor: {R: 240, G: 240, B: 240, A: 255}
+        -   UIElement: !TextBlock
+                Id: 853a4dd6-2f48-42e3-8078-cdab8acd3f6c
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                HorizontalAlignment: Center
+                VerticalAlignment: Center
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Text: Click me!
+                Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
+                TextSize: 20.0
+                TextColor: {R: 240, G: 240, B: 240, A: 255}
+        -   UIElement: !TextBlock
+                Id: 8c74b615-e667-413b-a62a-ec61dc47eba8
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                HorizontalAlignment: Center
+                VerticalAlignment: Center
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Text: Click me!
+                Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
+                TextSize: 20.0
+                TextColor: {R: 240, G: 240, B: 240, A: 255}
         -   UIElement: !Button
                 Id: 968fd80d-fef8-45ef-879c-51d7d66f0ff0
                 DependencyProperties: {}
                 BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
                 Visibility: Hidden
                 DrawLayerNumber: 2
-                Width: 100.0
-                Height: 100.0
+                Width: 60.0
+                Height: 60.0
                 HorizontalAlignment: Left
-                Margin: {Left: 200.0}
+                Margin: {Left: 120.0}
                 MaximumWidth: 3.4028235E+38
                 MaximumHeight: 3.4028235E+38
                 MaximumDepth: 3.4028235E+38
-                Name: Slot3
+                Name: 
                 Content: !TextBlock ref!! 29a65add-d98c-421c-8b0e-b8c11295df02
                 PressedImage: !SpriteFromSheet
                     Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
@@ -229,14 +306,14 @@ Hierarchy:
                 BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
                 Visibility: Hidden
                 DrawLayerNumber: 2
-                Width: 100.0
-                Height: 100.0
+                Width: 60.0
+                Height: 60.0
                 HorizontalAlignment: Right
-                Margin: {Right: 100.0}
+                Margin: {Right: 240.0}
                 MaximumWidth: 3.4028235E+38
                 MaximumHeight: 3.4028235E+38
                 MaximumDepth: 3.4028235E+38
-                Name: Slot8
+                Name: 
                 Content: !TextBlock ref!! 07cbd48b-99dc-4ac0-b4c0-b32721cdd97e
                 PressedImage: !SpriteFromSheet
                     Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
@@ -246,20 +323,33 @@ Hierarchy:
                     CurrentFrame: 1
                 MouseOverImage: !SpriteFromSheet
                     Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
+        -   UIElement: !TextBlock
+                Id: a072adaf-35fc-483e-bc4e-9875fb5f219b
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                HorizontalAlignment: Center
+                VerticalAlignment: Center
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Text: Click me!
+                Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
+                TextSize: 20.0
+                TextColor: {R: 240, G: 240, B: 240, A: 255}
         -   UIElement: !Button
                 Id: a82157ba-d465-4aac-851d-6fe86c837c40
                 DependencyProperties: {}
                 BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
                 Visibility: Hidden
                 DrawLayerNumber: 2
-                Width: 100.0
-                Height: 100.0
-                HorizontalAlignment: Right
-                Margin: {Right: 200.0}
+                Width: 60.0
+                Height: 60.0
+                Margin: {Left: 360.0, Right: 300.0}
                 MaximumWidth: 3.4028235E+38
                 MaximumHeight: 3.4028235E+38
                 MaximumDepth: 3.4028235E+38
-                Name: Slot7
+                Name: 
                 Content: !TextBlock ref!! d74fd739-6dda-41ab-befb-04fabe525410
                 PressedImage: !SpriteFromSheet
                     Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
@@ -275,15 +365,38 @@ Hierarchy:
                 BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
                 Visibility: Hidden
                 DrawLayerNumber: 2
-                Width: 100.0
-                Height: 100.0
+                Width: 60.0
+                Height: 60.0
                 HorizontalAlignment: Left
-                Margin: {Left: 100.0}
+                Margin: {Left: 60.0}
                 MaximumWidth: 3.4028235E+38
                 MaximumHeight: 3.4028235E+38
                 MaximumDepth: 3.4028235E+38
-                Name: Slot2
+                Name: 
                 Content: !TextBlock ref!! bc46b418-11e4-4c99-8800-689d19c1a115
+                PressedImage: !SpriteFromSheet
+                    Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
+                    CurrentFrame: 2
+                NotPressedImage: !SpriteFromSheet
+                    Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
+                    CurrentFrame: 1
+                MouseOverImage: !SpriteFromSheet
+                    Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
+        -   UIElement: !Button
+                Id: b978156c-86a4-4f8b-9dcf-1b7cac22dde1
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Visibility: Hidden
+                DrawLayerNumber: 2
+                Width: 60.0
+                Height: 60.0
+                HorizontalAlignment: Right
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: 
+                Content: !TextBlock ref!! 853a4dd6-2f48-42e3-8078-cdab8acd3f6c
                 PressedImage: !SpriteFromSheet
                     Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
                     CurrentFrame: 2
@@ -326,14 +439,14 @@ Hierarchy:
                 BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
                 Visibility: Hidden
                 DrawLayerNumber: 2
-                Width: 100.0
-                Height: 100.0
+                Width: 60.0
+                Height: 60.0
                 HorizontalAlignment: Right
-                Margin: {}
+                Margin: {Right: 180.0}
                 MaximumWidth: 3.4028235E+38
                 MaximumHeight: 3.4028235E+38
                 MaximumDepth: 3.4028235E+38
-                Name: Slot9
+                Name: 
                 Content: !TextBlock ref!! ba73447a-2682-45c9-bba7-f55fba9baf13
                 PressedImage: !SpriteFromSheet
                     Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
@@ -349,14 +462,14 @@ Hierarchy:
                 BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
                 Visibility: Hidden
                 DrawLayerNumber: 2
-                Width: 100.0
-                Height: 100.0
+                Width: 60.0
+                Height: 60.0
                 HorizontalAlignment: Left
-                Margin: {Left: 300.0}
+                Margin: {Left: 180.0}
                 MaximumWidth: 3.4028235E+38
                 MaximumHeight: 3.4028235E+38
                 MaximumDepth: 3.4028235E+38
-                Name: Slot4
+                Name: 
                 Content: !TextBlock ref!! 7ed27db7-d8b3-4a58-8073-6bb038fd650f
                 PressedImage: !SpriteFromSheet
                     Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
