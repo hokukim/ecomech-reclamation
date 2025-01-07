@@ -1,0 +1,19 @@
+!Model
+Id: 7455eea9-7ac3-493d-b29b-4a89034e17fe
+SerializedVersion: {Stride: 2.0.0.0}
+Tags: []
+Source: !file ../Graphics/Collectibles/Magical Flower/Magical Flower.fbx
+Skeleton: b311f2bd-132f-40cb-b1ea-20fcd2cc9480:Collectibles/Magical Flower Skeleton
+PivotPosition: {X: 0.0, Y: 0.0, Z: 0.0}
+Materials:
+    aa770b00c787fdfa466f288ca27fd5aa:
+        Name: Material.069
+        MaterialInstance:
+            Material: null
+    ee8a18db837503a326e018f9db1fac07:
+        Name: Material.002
+        MaterialInstance:
+            Material: e1f15bf1-a69c-4b3e-a112-eea4f3d55365:Collectibles/Material.002
+Modifiers: {}
+~SourceHashes:
+    5e7175089bdc4629f145e0613cfc57e8~../Graphics/Collectibles/Magical Flower/Magical Flower.fbx: a5f0055b15450b22a711431c7f1b6345

@@ -72,7 +72,7 @@ namespace EcomechReclamation.Player
 
             modelChildEntity = Entity.GetChild(0);
 
-            FlowerPrefab = Content.Load<Prefab>("magical flower_rigged_animated _blue crystal");
+            FlowerPrefab = Content.Load<Prefab>("Magical Flower");
             AddFlower();
         }
 

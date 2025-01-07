@@ -8,7 +8,7 @@ Hierarchy:
     Parts:
         -   Entity:
                 Id: f0bab9bd-720d-4fbb-a803-43e3ab38a421
-                Name: magical flower_rigged_animated _blue crystal
+                Name: Magical Flower
                 Components:
                     311e928182926008de42513ef5878037: !TransformComponent
                         Id: 65119794-85a8-4595-827a-3aad16570425
@@ -18,9 +18,8 @@ Hierarchy:
                         Children: {}
                     9782312a93a6f00255a4c34b445a8b68: !ModelComponent
                         Id: 072cfae7-2c5f-4e8d-a69c-309513172bd0
-                        Model: 7455eea9-7ac3-493d-b29b-4a89034e17fe:BlocksPrefabs/Models/magical flower_rigged_animated _blue crystal
-                        Materials:
-                            64d1ad396457d67c916a14694ce24588~0: 30748aa1-2a84-488a-a483-59689986b457:BlocksPrefabs/Models/Material.069
+                        Model: 7455eea9-7ac3-493d-b29b-4a89034e17fe:Collectibles/Magical Flower
+                        Materials: {}
                     cc0164355143da83a4c88fbf7621f241: !RigidbodyComponent
                         Id: 6b4b2786-c788-417c-8b5e-00ccbab27d68
                         CanSleep: false
@@ -48,6 +47,6 @@ Hierarchy:
                     194a19966b104626ec8a3d567748114e: !AnimationComponent
                         Id: b7377f00-0861-4404-aa58-2579c59a6b4a
                         Animations:
-                            30ab1554b5ca50434acb74ee356c0cce~Bloom: 9b75c6e8-bec6-4c5d-88dc-8d9477f4dcbe:Animations/magical flower_animated with crystal_Armature_ArmatureAction
+                            30ab1554b5ca50434acb74ee356c0cce~Bloom: 9b75c6e8-bec6-4c5d-88dc-8d9477f4dcbe:Animations/Magical Flower_Armature_ArmatureAction
                     1f033927a46eec08095b8e11de3868a3: !EcomechReclamation.Animations.MagicalFlowerAnimation,EcomechReclamation.Game
                         Id: 00b5d871-e58f-4532-8220-5e362229972b
