@@ -34,8 +34,8 @@ namespace EcomechReclamation.Player
         [Display("Landing")]
         public AnimationClip AnimationJumpEnd { get; set; }
 
-        [Display("Harvesting")]
-        public AnimationClip AnimationHarvest { get; set; }
+        [Display("Collecting")]
+        public AnimationClip AnimationCollect { get; set; }
 
         [DataMemberRange(0, 1, 0.01, 0.1, 3)]
         [Display("Walk Threshold")]
@@ -50,7 +50,7 @@ namespace EcomechReclamation.Player
         private AnimationClipEvaluator animEvaluatorJumpStart;
         private AnimationClipEvaluator animEvaluatorJumpMid;
         private AnimationClipEvaluator animEvaluatorJumpEnd;
-        private AnimationClipEvaluator animEvaluatorHarvest;
+        private AnimationClipEvaluator animEvaluatorCollect;
         private double currentTime = 0;
 
         // Idle-Walk-Run lerp
@@ -65,7 +65,7 @@ namespace EcomechReclamation.Player
         private AnimationState state = AnimationState.Airborne;
         private readonly EventReceiver<float> runSpeedEvent = new EventReceiver<float>(PlayerController.RunSpeedEventKey);
         private readonly EventReceiver<bool> isGroundedEvent = new EventReceiver<bool>(PlayerController.IsGroundedEventKey);
-        private readonly EventReceiver harvestEvent = new EventReceiver(PlayerController.HarvestEventKey);
+        private readonly EventReceiver<Entity> collectEntityEvent = new(InventoryController.CollectEntityEventKey);
 
         float runSpeed;
 
@@ -94,8 +94,8 @@ namespace EcomechReclamation.Player
             if (AnimationJumpEnd == null)
                 throw new InvalidOperationException("Landing animation is not set");
 
-            if (AnimationHarvest == null)
-                throw new InvalidOperationException("Harvest animation is not set");
+            if (AnimationCollect == null)
+                throw new InvalidOperationException("Collect animation is not set");
 
             // By setting a custom blend tree builder we can override the default behavior of the animation system
             //  Instead, BuildBlendTree(FastList<AnimationOperation> blendStack) will be called each frame
@@ -107,7 +107,7 @@ namespace EcomechReclamation.Player
             animEvaluatorJumpStart = AnimationComponent.Blender.CreateEvaluator(AnimationJumpStart);
             animEvaluatorJumpMid = AnimationComponent.Blender.CreateEvaluator(AnimationJumpMid);
             animEvaluatorJumpEnd = AnimationComponent.Blender.CreateEvaluator(AnimationJumpEnd);
-            animEvaluatorHarvest = AnimationComponent.Blender.CreateEvaluator(AnimationHarvest);
+            animEvaluatorCollect = AnimationComponent.Blender.CreateEvaluator(AnimationCollect);
 
             // Initial walk lerp
             walkLerpFactor = 0;
@@ -125,7 +125,7 @@ namespace EcomechReclamation.Player
             AnimationComponent.Blender.ReleaseEvaluator(animEvaluatorJumpStart);
             AnimationComponent.Blender.ReleaseEvaluator(animEvaluatorJumpMid);
             AnimationComponent.Blender.ReleaseEvaluator(animEvaluatorJumpEnd);
-            AnimationComponent.Blender.ReleaseEvaluator(animEvaluatorHarvest);
+            AnimationComponent.Blender.ReleaseEvaluator(animEvaluatorCollect);
         }
 
         private void UpdateWalking()
@@ -227,10 +227,10 @@ namespace EcomechReclamation.Player
                 state = (isGrounded) ? AnimationState.Landing : AnimationState.Jumping;
             }
 
-            if (harvestEvent.TryReceive())
+            if (collectEntityEvent.TryReceive(out Entity _))
             {
                 currentTime = 0;
-                state = AnimationState.Harvesting;
+                state = AnimationState.Collecting;
             }
 
             switch (state)
@@ -239,7 +239,7 @@ namespace EcomechReclamation.Player
                 case AnimationState.Jumping: UpdateJumping(); break;
                 case AnimationState.Airborne: UpdateAirborne(); break;
                 case AnimationState.Landing: UpdateLanding(); break;
-                case AnimationState.Harvesting: UpdateHarvesting(); break;
+                case AnimationState.Collecting: UpdateCollecting(); break;
             }
         }
 
@@ -284,10 +284,10 @@ namespace EcomechReclamation.Player
                     }
                     break;
 
-                case AnimationState.Harvesting:
+                case AnimationState.Collecting:
                     {
-                        blendStack.Add(AnimationOperation.NewPush(animEvaluatorHarvest,
-                            TimeSpan.FromTicks((long)(currentTime * AnimationHarvest.Duration.Ticks))));
+                        blendStack.Add(AnimationOperation.NewPush(animEvaluatorCollect,
+                            TimeSpan.FromTicks((long)(currentTime * AnimationCollect.Duration.Ticks))));
                     }
                     break;
             }
@@ -299,19 +299,19 @@ namespace EcomechReclamation.Player
             Jumping,
             Airborne,
             Landing,
-            Harvesting
+            Collecting
         }
 
-        private void UpdateHarvesting()
+        private void UpdateCollecting()
         {
             int speedFactor = 1;
-            TimeSpan currentTicks = TimeSpan.FromTicks((long)(currentTime * AnimationHarvest.Duration.Ticks));
+            TimeSpan currentTicks = TimeSpan.FromTicks((long)(currentTime * AnimationCollect.Duration.Ticks));
             long updatedTicks = currentTicks.Ticks + (long)(Game.DrawTime.Elapsed.Ticks * TimeFactor * speedFactor);
 
-            if (updatedTicks < AnimationHarvest.Duration.Ticks)
+            if (updatedTicks < AnimationCollect.Duration.Ticks)
             {
                 currentTicks = TimeSpan.FromTicks(updatedTicks);
-                currentTime = ((double)currentTicks.Ticks / (double)AnimationHarvest.Duration.Ticks);
+                currentTime = ((double)currentTicks.Ticks / (double)AnimationCollect.Duration.Ticks);
             }
             else
             {

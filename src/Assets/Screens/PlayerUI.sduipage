@@ -45,6 +45,15 @@ Hierarchy:
                     CurrentFrame: 1
                 MouseOverImage: !SpriteFromSheet
                     Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
+        -   UIElement: !ImageElement
+                Id: 0f84c39d-303a-4c97-b933-1e114f96ef39
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Color: {R: 255, G: 255, B: 255, A: 255}
         -   UIElement: !Button
                 Id: 15004d77-6453-45dd-be28-86d1dd65a9d4
                 DependencyProperties: {}
@@ -118,6 +127,7 @@ Hierarchy:
                 MaximumDepth: 3.4028235E+38
                 Name: InventoryUI
                 Children:
+                    01d4d0885cc8f980032da0e5e1b2757f: !Border ref!! 64b8a5d7-7793-4b3b-9f5b-abdf1d7f4ba4
                     382f8ddf960d0e510fc431cd6bdd70d0: !Button ref!! 69d2bda5-54c8-4469-b0ca-cf52fa6667a4
                     c5dc123deab060b5dd8ddbbf31f828c4: !Button ref!! b7ec7f32-04aa-48fd-95b9-b1263230a085
                     6e97d56692f0460551c111acf5844140: !Button ref!! 968fd80d-fef8-45ef-879c-51d7d66f0ff0
@@ -138,15 +148,17 @@ Hierarchy:
                 DependencyProperties: {}
                 BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
                 HorizontalAlignment: Center
-                VerticalAlignment: Center
+                VerticalAlignment: Top
                 Margin: {}
                 MaximumWidth: 3.4028235E+38
                 MaximumHeight: 3.4028235E+38
                 MaximumDepth: 3.4028235E+38
+                Name: Name
                 Text: Click me!
                 Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
-                TextSize: 20.0
+                TextSize: 12.0
                 TextColor: {R: 240, G: 240, B: 240, A: 255}
+                TextAlignment: Center
         -   UIElement: !Button
                 Id: 63e78c95-ef70-47d2-8cdd-f1ed9a3276e1
                 DependencyProperties: {}
@@ -170,6 +182,22 @@ Hierarchy:
                     CurrentFrame: 1
                 MouseOverImage: !SpriteFromSheet
                     Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
+        -   UIElement: !Border
+                Id: 64b8a5d7-7793-4b3b-9f5b-abdf1d7f4ba4
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Visibility: Hidden
+                Width: 60.0
+                Height: 60.0
+                HorizontalAlignment: Left
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Padding: {}
+                Content: !ImageElement ref!! 0f84c39d-303a-4c97-b933-1e114f96ef39
+                BorderColor: {R: 0, G: 255, B: 0, A: 255}
+                BorderThickness: {Left: 1.0, Top: 1.0, Right: 1.0, Bottom: 1.0}
         -   UIElement: !Button
                 Id: 69d2bda5-54c8-4469-b0ca-cf52fa6667a4
                 DependencyProperties: {}
