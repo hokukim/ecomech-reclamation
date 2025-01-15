@@ -20,12 +20,12 @@ Hierarchy:
         -   UIElement: !Grid
                 Id: 452afe4e-81b3-4a66-bf6a-2592ac813a67
                 DependencyProperties: {}
-                BackgroundColor: {R: 0, G: 255, B: 255, A: 255}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 255}
                 Visibility: Hidden
                 Width: 720.0
                 Height: 60.0
                 VerticalAlignment: Bottom
-                Margin: {Left: 211.0, Right: 169.0, Bottom: 51.0}
+                Margin: {Left: 280.0, Right: 280.0, Bottom: 56.0}
                 MaximumWidth: 3.4028235E+38
                 MaximumHeight: 3.4028235E+38
                 MaximumDepth: 3.4028235E+38

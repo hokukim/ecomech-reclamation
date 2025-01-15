@@ -111,16 +111,21 @@ public class InventoryController : SyncScript
             return;
         }
 
-        if (InventoryUI.VisualChildren.FirstOrDefault(child => !child.IsVisible) is not Border slot)
+        if (PlayerManager.Instance.Inventory.IsFull)
         {
-            // Inventory is full.
+            return;
+        }
+
+        Border slot = InventoryUI.FindVisualChildrenOfType<Border>()
+            .FirstOrDefault(child => child.Visibility != Visibility.Visible);
+        if (slot != null)
+        {
+            // UI inventory is full.
             return;
         }
 
         CollectEntityEventKey.Broadcast(CollisionEntity);
         RemoveEntity(CollisionEntity);
-
-        slot.Visibility = Visibility.Visible;
 
         // Display border.
         slot.Visibility = Visibility.Visible;
