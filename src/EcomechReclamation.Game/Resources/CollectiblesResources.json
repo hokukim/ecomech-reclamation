@@ -1,0 +1,7 @@
+{
+  "collectibles": {
+    "Magical Flower": {
+      "spriteSheetPath": "../Assets/Magical Flower.png"
+    }
+  }
+}

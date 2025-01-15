@@ -33,7 +33,7 @@ namespace EcomechReclamation.Player
 
         private readonly EventReceiver<bool> jumpEvent = new EventReceiver<bool>(PlayerInput.JumpEventKey);
 
-        private readonly EventReceiver<Entity> collectEntityEvent = new(InventoryController.CollectEntityEventKey);
+        private readonly EventReceiver<Entity> collectEntityEvent = new(InventoryController.CollectEntityEvent);
 
         private EventReceiver InteractEvent { get; init; } = new(PlayerInput.InteractEventKey);
 

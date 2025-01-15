@@ -15,4 +15,5 @@ ExplicitFolders: []
 Bundles: []
 TemplateFolders: []
 RootAssets:
+    - 381af4c3-5d3e-408a-98dd-2a277c84f41b:Sprites/Collectibles/Magical Flower spritesheet
     - f95c1467-8dab-4bd3-ace1-f8153bac9072:Magical Flower

@@ -1,11 +1,10 @@
-﻿namespace EcomechReclamation.Player
+﻿namespace EcomechReclamation.Player;
+
+internal class PlayerManager
 {
-    internal class PlayerManager
-    {
-        public static PlayerManager Instance { get; } = new();
+    public static PlayerManager Instance { get; } = new();
 
-        public InventoryManager Inventory { get; } = new();
+    public InventoryManager Inventory { get; } = new();
 
-        private PlayerManager() { }
-    }
+    private PlayerManager() { }
 }

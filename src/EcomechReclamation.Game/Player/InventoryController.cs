@@ -3,6 +3,8 @@ using EcomechReclamation.Player;
 using Stride.Core.Mathematics;
 using Stride.Engine;
 using Stride.Engine.Events;
+using Stride.Graphics;
+using Stride.Rendering.Sprites;
 using Stride.UI;
 using Stride.UI.Controls;
 using System;
@@ -15,7 +17,7 @@ public class InventoryController : SyncScript
     /// <summary>
     /// Occurs when an item is being collected into inventory.
     /// </summary>
-    public static EventKey<Entity> CollectEntityEventKey = new();
+    public static EventKey<Entity> CollectEntityEvent = new();
 
     /// <summary>
     /// Receives an event when the toggle inventory event key is triggered.
@@ -116,26 +118,42 @@ public class InventoryController : SyncScript
             return;
         }
 
-        Border slot = InventoryUI.FindVisualChildrenOfType<Border>()
-            .FirstOrDefault(child => child.Visibility != Visibility.Visible);
-        if (slot != null)
+        Border uiSlot = InventoryUI.FindVisualChildrenOfType<Border>().FirstOrDefault(child => child.Visibility != Visibility.Visible);
+
+        if (uiSlot == null)
         {
             // UI inventory is full.
             return;
         }
 
-        CollectEntityEventKey.Broadcast(CollisionEntity);
+        // Add item to inventory.
+        if (!PlayerManager.Instance.Inventory.TryAddItem(CollisionEntity.Name, out Slot itemSlot))
+        {
+            // Could not add item to inventory.
+            return;
+        }
+
+        CollectEntityEvent.Broadcast(CollisionEntity);
         RemoveEntity(CollisionEntity);
+        CollisionEntity = null;
 
         // Display border.
-        slot.Visibility = Visibility.Visible;
+        uiSlot.Visibility = Visibility.Visible;
 
         // Display image.
-        ImageElement imageElement = slot.FindVisualChildOfType<ImageElement>();
+        ImageElement image = uiSlot.FindVisualChildOfType<ImageElement>();
+        image.Source = new SpriteFromSheet
+        {
+            Sheet = Content.Load<SpriteSheet>($"Sprites/Collectibles/{itemSlot.ItemName} spritesheet")
+        };
 
         AddFlower();
     }
 
+    /// <summary>
+    /// Removes an entity from the scene.
+    /// </summary>
+    /// <param name="entity">The entity to remove.</param>
     private void RemoveEntity(Entity entity)
     {
         foreach (Entity child in entity.GetChildren())
@@ -145,7 +163,6 @@ public class InventoryController : SyncScript
 
         Entity parent = entity.GetParent();
         Entity.Scene.Entities.Remove(parent);
-        CollisionEntity = null;
     }
 
     private void AddFlower()

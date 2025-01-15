@@ -65,7 +65,7 @@ namespace EcomechReclamation.Player
         private AnimationState state = AnimationState.Airborne;
         private readonly EventReceiver<float> runSpeedEvent = new EventReceiver<float>(PlayerController.RunSpeedEventKey);
         private readonly EventReceiver<bool> isGroundedEvent = new EventReceiver<bool>(PlayerController.IsGroundedEventKey);
-        private readonly EventReceiver<Entity> collectEntityEvent = new(InventoryController.CollectEntityEventKey);
+        private readonly EventReceiver<Entity> collectEntityEvent = new(InventoryController.CollectEntityEvent);
 
         float runSpeed;
 

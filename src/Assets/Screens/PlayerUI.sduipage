@@ -20,7 +20,7 @@ Hierarchy:
         -   UIElement: !Grid
                 Id: 452afe4e-81b3-4a66-bf6a-2592ac813a67
                 DependencyProperties: {}
-                BackgroundColor: {R: 0, G: 0, B: 0, A: 255}
+                BackgroundColor: {R: 255, G: 255, B: 255, A: 255}
                 Visibility: Hidden
                 Width: 720.0
                 Height: 60.0
