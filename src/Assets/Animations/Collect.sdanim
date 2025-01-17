@@ -2,7 +2,7 @@
 Id: c564bf92-801e-4d9d-883c-3b8a4125c14f
 SerializedVersion: {Stride: 2.0.0.0}
 Tags: []
-Source: !file ../../Resources/Animation/Harvest.fbx
+Source: !file ../../Resources/Animation/Collect.fbx
 AnimationStack: 0
 ClipDuration:
     Enabled: false
@@ -17,4 +17,4 @@ PreviewModel: 4efafe3d-ad3b-4917-bc77-100252b50595:BlocksPrefabs/Models/mannequi
 AnimationTimeMinimum: 0:00:00:00.0000000
 AnimationTimeMaximum: 0:00:00:00.4833300
 ~SourceHashes:
-    1e9e0574290cc4a844db22c6b00df6c6~../../Resources/Animation/Harvest.fbx: 818906ede58fbbe43135bfd20ba0fea4
+    12decd0b511ab1443faeaf95bb34330f~../../Resources/Animation/Collect.fbx: 818906ede58fbbe43135bfd20ba0fea4

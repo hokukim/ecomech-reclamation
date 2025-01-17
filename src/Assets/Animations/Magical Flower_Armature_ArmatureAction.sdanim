@@ -1,0 +1,20 @@
+!Animation
+Id: 9b75c6e8-bec6-4c5d-88dc-8d9477f4dcbe
+SerializedVersion: {Stride: 2.0.0.0}
+Tags: []
+Source: !file ../Graphics/Collectibles/Magical Flower/Magical Flower.fbx
+AnimationStack: 0
+ClipDuration:
+    Enabled: false
+    StartAnimationTime: 0:00:00:00.0000000
+    EndAnimationTime: 0:00:30:00.0000000
+PivotPosition: {X: 0.0, Y: 0.0, Z: 0.0}
+RepeatMode: PlayOnce
+Type: !StandardAnimationAssetType {}
+Skeleton: b311f2bd-132f-40cb-b1ea-20fcd2cc9480:Collectibles/Magical Flower Skeleton
+RootMotion: false
+PreviewModel: 7455eea9-7ac3-493d-b29b-4a89034e17fe:Collectibles/Magical Flower
+AnimationTimeMinimum: 0:00:00:00.0000000
+AnimationTimeMaximum: 0:00:00:10.4166600
+~SourceHashes:
+    3eefcbe3348d9691c321bfedeca2851b~../Graphics/Collectibles/Magical Flower/Magical Flower.fbx: a5f0055b15450b22a711431c7f1b6345

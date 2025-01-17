@@ -6,9 +6,6 @@ using Stride.Engine;
 using Stride.Engine.Events;
 using Stride.Physics;
 using System;
-using System.Collections.Generic;
-using System.Collections.Specialized;
-using System.Linq;
 
 namespace EcomechReclamation.Player
 {
@@ -20,8 +17,6 @@ namespace EcomechReclamation.Player
         public static readonly EventKey<bool> IsGroundedEventKey = new EventKey<bool>();
 
         public static readonly EventKey<float> RunSpeedEventKey = new EventKey<float>();
-
-        public static readonly EventKey HarvestEventKey = new();
 
         /// <summary>
         /// Triggered when an entity is collected.
@@ -38,9 +33,9 @@ namespace EcomechReclamation.Player
 
         private readonly EventReceiver<bool> jumpEvent = new EventReceiver<bool>(PlayerInput.JumpEventKey);
 
-        private EventReceiver InteractEvent { get; init; } = new(PlayerInput.InteractEventKey);
+        private readonly EventReceiver<Entity> collectEntityEvent = new(InventoryController.CollectEntityEvent);
 
-        private List<Entity> Collectibles { get; } = [];
+        private EventReceiver InteractEvent { get; init; } = new(PlayerInput.InteractEventKey);
 
         /// <summary>
         /// Allow for some latency from the user input to make jumping appear more natural
@@ -53,9 +48,6 @@ namespace EcomechReclamation.Player
 
         // Allow some inertia to the movement
         private Vector3 moveDirection = Vector3.Zero;
-
-        Prefab FlowerPrefab { get; set; }
-        private Entity FlowerPrefabEntity { get; set; } = new("flower", new Vector3(-7.178f, 0, 2.539f));
 
         /// <summary>
         /// Called when the script is first initialized
@@ -71,9 +63,6 @@ namespace EcomechReclamation.Player
             if (character == null) throw new ArgumentException("Please add a CharacterComponent to the entity containing PlayerController!");
 
             modelChildEntity = Entity.GetChild(0);
-
-            FlowerPrefab = Content.Load<Prefab>("magical flower_rigged_animated _blue crystal");
-            AddFlower();
         }
 
         /// <summary>
@@ -85,28 +74,6 @@ namespace EcomechReclamation.Player
             Move(MaxRunSpeed);
 
             Jump();
-
-            Interact();
-        }
-
-        /// <summary>
-        /// This player controller entity has collided with a collectible entity.
-        /// </summary>
-        /// <param name="entity">Collectible entity.</param>
-        /// <param name="action">Collision action.</param>
-        public void CollectibleEntityCollision(Entity entity, NotifyCollectionChangedAction action)
-        {
-            if (action == NotifyCollectionChangedAction.Add)
-            {
-                Collectibles.Add(entity);
-                return;
-            }
-
-            if (action == NotifyCollectionChangedAction.Remove)
-            {
-                Collectibles.Remove(entity);
-                return;
-            }
         }
 
         /// <summary>
@@ -184,52 +151,9 @@ namespace EcomechReclamation.Player
             modelChildEntity.Transform.Rotation = Quaternion.RotationYawPitchRoll(MathUtil.DegreesToRadians(yawOrientation), 0, 0);
         }
 
-        private void Interact()
+        private void CollectEntity()
         {
-            if (!InteractEvent.TryReceive())
-            {
-                return;
-            }
 
-            if (Collectibles.Count == 0)
-            {
-                // Nothing to collect.
-                return;
-            }
-
-            // Animate character harvest.
-            HarvestEventKey.Broadcast();
-
-            // Add most recent item to inventory.
-            Entity entity = Collectibles[^1];
-            CollectEntityEventKey.Broadcast(entity);
-            RemoveEntity(entity);
-
-            // Add flower.
-            AddFlower();
-        }
-
-        private void AddFlower()
-        {
-            float x = new Random().Next() % 2 == 0 ? 1f : -1f;
-            FlowerPrefabEntity.Transform.Position.X += x;
-            foreach (Entity childEntity in FlowerPrefab.Instantiate()
-                .Where(entity => FlowerPrefabEntity.FindChild(entity.Name) == null))
-            {
-                FlowerPrefabEntity.AddChild(childEntity);
-            }
-            Entity.Scene.Entities.Add(FlowerPrefabEntity);
-        }
-
-        private void RemoveEntity(Entity entity)
-        {
-            foreach (Entity child in entity.GetChildren())
-            {
-                entity.RemoveChild(child);
-            }
-
-            Entity parent = entity.GetParent();
-            Entity.Scene.Entities.Remove(parent);
         }
     }
 }

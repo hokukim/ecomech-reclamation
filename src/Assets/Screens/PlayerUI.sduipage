@@ -8,8 +8,8 @@ Hierarchy:
     RootParts:
         - !Grid ref!! 6befcc24-a656-4bf8-92a0-91f75e67fdc6
     Parts:
-        -   UIElement: !TextBlock
-                Id: 07cbd48b-99dc-4ac0-b4c0-b32721cdd97e
+        -   UIElement: !ImageElement
+                Id: 0f84c39d-303a-4c97-b933-1e114f96ef39
                 DependencyProperties: {}
                 BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
                 HorizontalAlignment: Center
@@ -18,12 +18,31 @@ Hierarchy:
                 MaximumWidth: 3.4028235E+38
                 MaximumHeight: 3.4028235E+38
                 MaximumDepth: 3.4028235E+38
-                Text: Click me!
-                Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
-                TextSize: 20.0
-                TextColor: {R: 240, G: 240, B: 240, A: 255}
-        -   UIElement: !Button
-                Id: 0dd8f154-a42d-4106-a0c3-2c4b2297496f
+                Color: {R: 255, G: 255, B: 255, A: 255}
+        -   UIElement: !Grid
+                Id: 452afe4e-81b3-4a66-bf6a-2592ac813a67
+                DependencyProperties: {}
+                BackgroundColor: {R: 255, G: 255, B: 255, A: 255}
+                Visibility: Hidden
+                Width: 720.0
+                Height: 60.0
+                VerticalAlignment: Bottom
+                Margin: {Left: 280.0, Right: 280.0, Bottom: 56.0}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: InventoryUI
+                Children:
+                    01d4d0885cc8f980032da0e5e1b2757f: !Border ref!! 64b8a5d7-7793-4b3b-9f5b-abdf1d7f4ba4
+                    fbc8948db274b413a609a6db23c6c36f: !Border ref!! e570a15b-3177-4b78-b101-be0aee1f35fb
+                    74190fba115235b3e63df743c2f9b9ed: !Border ref!! 654c9c48-ec8d-4a9f-9f00-e465f0a89d58
+                    37147dd643fc58a2e4e2b99c2928d9a1: !Border ref!! 57c6f460-1caf-459d-a703-ad6628366590
+                    b8dfd5733a65de067c06f3a5700f6410: !Border ref!! 48dd1f13-d9bc-441f-8005-3dc417fa3063
+                RowDefinitions: {}
+                ColumnDefinitions: {}
+                LayerDefinitions: {}
+        -   UIElement: !Border
+                Id: 48dd1f13-d9bc-441f-8005-3dc417fa3063
                 DependencyProperties: {}
                 BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
                 Visibility: Hidden
@@ -35,40 +54,12 @@ Hierarchy:
                 MaximumWidth: 3.4028235E+38
                 MaximumHeight: 3.4028235E+38
                 MaximumDepth: 3.4028235E+38
-                Name: 
-                Content: !TextBlock ref!! 6e3bf721-5d45-4982-a508-37611ccefa15
-                PressedImage: !SpriteFromSheet
-                    Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
-                    CurrentFrame: 2
-                NotPressedImage: !SpriteFromSheet
-                    Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
-                    CurrentFrame: 1
-                MouseOverImage: !SpriteFromSheet
-                    Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
-        -   UIElement: !Button
-                Id: 15004d77-6453-45dd-be28-86d1dd65a9d4
-                DependencyProperties: {}
-                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
-                Visibility: Hidden
-                DrawLayerNumber: 2
-                Width: 60.0
-                Height: 60.0
-                Margin: {Left: 300.0, Right: 360.0}
-                MaximumWidth: 3.4028235E+38
-                MaximumHeight: 3.4028235E+38
-                MaximumDepth: 3.4028235E+38
-                Name: 
-                Content: !TextBlock ref!! 7e893b8d-1426-45ee-a3a5-0162b84fcdf0
-                PressedImage: !SpriteFromSheet
-                    Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
-                    CurrentFrame: 2
-                NotPressedImage: !SpriteFromSheet
-                    Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
-                    CurrentFrame: 1
-                MouseOverImage: !SpriteFromSheet
-                    Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
-        -   UIElement: !TextBlock
-                Id: 29a65add-d98c-421c-8b0e-b8c11295df02
+                Padding: {}
+                Content: !ImageElement ref!! ec8c5f1f-e210-4452-87b7-43a06f2408a4
+                BorderColor: {R: 0, G: 255, B: 0, A: 255}
+                BorderThickness: {Left: 1.0, Top: 1.0, Right: 1.0, Bottom: 1.0}
+        -   UIElement: !ImageElement
+                Id: 4a39f60a-f2c5-4175-846b-ed15a528f3d6
                 DependencyProperties: {}
                 BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
                 HorizontalAlignment: Center
@@ -77,101 +68,26 @@ Hierarchy:
                 MaximumWidth: 3.4028235E+38
                 MaximumHeight: 3.4028235E+38
                 MaximumDepth: 3.4028235E+38
-                Text: Click me!
-                Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
-                TextSize: 20.0
-                TextColor: {R: 240, G: 240, B: 240, A: 255}
-        -   UIElement: !Button
-                Id: 3b7949ba-cc5c-40f2-b983-b46cbcbc5a9e
+                Color: {R: 255, G: 255, B: 255, A: 255}
+        -   UIElement: !Border
+                Id: 57c6f460-1caf-459d-a703-ad6628366590
                 DependencyProperties: {}
                 BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
                 Visibility: Hidden
                 DrawLayerNumber: 2
                 Width: 60.0
                 Height: 60.0
-                HorizontalAlignment: Right
-                Margin: {Right: 60.0}
+                HorizontalAlignment: Left
+                Margin: {Left: 180.0}
                 MaximumWidth: 3.4028235E+38
                 MaximumHeight: 3.4028235E+38
                 MaximumDepth: 3.4028235E+38
-                Name: 
-                Content: !TextBlock ref!! a072adaf-35fc-483e-bc4e-9875fb5f219b
-                PressedImage: !SpriteFromSheet
-                    Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
-                    CurrentFrame: 2
-                NotPressedImage: !SpriteFromSheet
-                    Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
-                    CurrentFrame: 1
-                MouseOverImage: !SpriteFromSheet
-                    Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
-        -   UIElement: !Grid
-                Id: 452afe4e-81b3-4a66-bf6a-2592ac813a67
-                DependencyProperties: {}
-                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
-                Visibility: Hidden
-                Width: 720.0
-                Height: 60.0
-                VerticalAlignment: Bottom
-                Margin: {Left: 211.0, Right: 169.0, Bottom: 51.0}
-                MaximumWidth: 3.4028235E+38
-                MaximumHeight: 3.4028235E+38
-                MaximumDepth: 3.4028235E+38
-                Name: InventoryUI
-                Children:
-                    382f8ddf960d0e510fc431cd6bdd70d0: !Button ref!! 69d2bda5-54c8-4469-b0ca-cf52fa6667a4
-                    c5dc123deab060b5dd8ddbbf31f828c4: !Button ref!! b7ec7f32-04aa-48fd-95b9-b1263230a085
-                    6e97d56692f0460551c111acf5844140: !Button ref!! 968fd80d-fef8-45ef-879c-51d7d66f0ff0
-                    77620e4b510e60d0039bf329eba89a00: !Button ref!! d38c09b6-9011-4044-a846-fef9736d99ed
-                    6d3145c90ee4f4b11bf6ecd1f39c23c4: !Button ref!! 0dd8f154-a42d-4106-a0c3-2c4b2297496f
-                    77f742f26bab4c7695178fd6c99ce236: !Button ref!! 15004d77-6453-45dd-be28-86d1dd65a9d4
-                    4a944edbaeb16998c278752684381886: !Button ref!! a82157ba-d465-4aac-851d-6fe86c837c40
-                    45382bdf0106218bc22235383b91f39c: !Button ref!! a02e1890-49d2-4857-a5bb-7e3c0e4e0746
-                    b49959ab0f05938b667936ba3ba1a7ee: !Button ref!! bd2b8836-28fd-45f0-877a-5afdae0f5391
-                    4f84719d18f9256abb063793a2262b79: !Button ref!! 63e78c95-ef70-47d2-8cdd-f1ed9a3276e1
-                    7a844f5f05346a7ff87dca5c29232fff: !Button ref!! 3b7949ba-cc5c-40f2-b983-b46cbcbc5a9e
-                    8faa92b546a056f15361d4225e3279ca: !Button ref!! b978156c-86a4-4f8b-9dcf-1b7cac22dde1
-                RowDefinitions: {}
-                ColumnDefinitions: {}
-                LayerDefinitions: {}
-        -   UIElement: !TextBlock
-                Id: 6162259b-a100-461d-b6e9-6fb99613a4de
-                DependencyProperties: {}
-                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
-                HorizontalAlignment: Center
-                VerticalAlignment: Center
-                Margin: {}
-                MaximumWidth: 3.4028235E+38
-                MaximumHeight: 3.4028235E+38
-                MaximumDepth: 3.4028235E+38
-                Text: Click me!
-                Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
-                TextSize: 20.0
-                TextColor: {R: 240, G: 240, B: 240, A: 255}
-        -   UIElement: !Button
-                Id: 63e78c95-ef70-47d2-8cdd-f1ed9a3276e1
-                DependencyProperties: {}
-                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
-                Visibility: Hidden
-                DrawLayerNumber: 2
-                Width: 60.0
-                Height: 60.0
-                HorizontalAlignment: Right
-                Margin: {Right: 120.0}
-                MaximumWidth: 3.4028235E+38
-                MaximumHeight: 3.4028235E+38
-                MaximumDepth: 3.4028235E+38
-                Name: 
-                Content: !TextBlock ref!! 8c74b615-e667-413b-a62a-ec61dc47eba8
-                PressedImage: !SpriteFromSheet
-                    Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
-                    CurrentFrame: 2
-                NotPressedImage: !SpriteFromSheet
-                    Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
-                    CurrentFrame: 1
-                MouseOverImage: !SpriteFromSheet
-                    Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
-        -   UIElement: !Button
-                Id: 69d2bda5-54c8-4469-b0ca-cf52fa6667a4
+                Padding: {}
+                Content: !ImageElement ref!! 4a39f60a-f2c5-4175-846b-ed15a528f3d6
+                BorderColor: {R: 0, G: 255, B: 0, A: 255}
+                BorderThickness: {Left: 1.0, Top: 1.0, Right: 1.0, Bottom: 1.0}
+        -   UIElement: !Border
+                Id: 64b8a5d7-7793-4b3b-9f5b-abdf1d7f4ba4
                 DependencyProperties: {}
                 BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
                 Visibility: Hidden
@@ -183,16 +99,26 @@ Hierarchy:
                 MaximumWidth: 3.4028235E+38
                 MaximumHeight: 3.4028235E+38
                 MaximumDepth: 3.4028235E+38
-                Name: 
-                Content: !TextBlock ref!! 6162259b-a100-461d-b6e9-6fb99613a4de
-                PressedImage: !SpriteFromSheet
-                    Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
-                    CurrentFrame: 2
-                NotPressedImage: !SpriteFromSheet
-                    Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
-                    CurrentFrame: 1
-                MouseOverImage: !SpriteFromSheet
-                    Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
+                Padding: {}
+                Content: !ImageElement ref!! 0f84c39d-303a-4c97-b933-1e114f96ef39
+                BorderColor: {R: 0, G: 255, B: 0, A: 255}
+                BorderThickness: {Left: 1.0, Top: 1.0, Right: 1.0, Bottom: 1.0}
+        -   UIElement: !Border
+                Id: 654c9c48-ec8d-4a9f-9f00-e465f0a89d58
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Visibility: Hidden
+                Width: 60.0
+                Height: 60.0
+                HorizontalAlignment: Left
+                Margin: {Left: 120.0}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Padding: {}
+                Content: !ImageElement ref!! eb492145-8925-48c2-9096-aeb95bd836fc
+                BorderColor: {R: 0, G: 255, B: 0, A: 255}
+                BorderThickness: {Left: 1.0, Top: 1.0, Right: 1.0, Bottom: 1.0}
         -   UIElement: !Grid
                 Id: 6befcc24-a656-4bf8-92a0-91f75e67fdc6
                 DependencyProperties: {}
@@ -207,8 +133,8 @@ Hierarchy:
                 RowDefinitions: {}
                 ColumnDefinitions: {}
                 LayerDefinitions: {}
-        -   UIElement: !TextBlock
-                Id: 6e3bf721-5d45-4982-a508-37611ccefa15
+        -   UIElement: !ImageElement
+                Id: 7cf1aa86-a1f6-40e1-9237-4b6f19024549
                 DependencyProperties: {}
                 BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
                 HorizontalAlignment: Center
@@ -217,52 +143,7 @@ Hierarchy:
                 MaximumWidth: 3.4028235E+38
                 MaximumHeight: 3.4028235E+38
                 MaximumDepth: 3.4028235E+38
-                Text: Click me!
-                Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
-                TextSize: 20.0
-                TextColor: {R: 240, G: 240, B: 240, A: 255}
-        -   UIElement: !TextBlock
-                Id: 7e893b8d-1426-45ee-a3a5-0162b84fcdf0
-                DependencyProperties: {}
-                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
-                HorizontalAlignment: Center
-                VerticalAlignment: Center
-                Margin: {}
-                MaximumWidth: 3.4028235E+38
-                MaximumHeight: 3.4028235E+38
-                MaximumDepth: 3.4028235E+38
-                Text: Click me!
-                Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
-                TextSize: 20.0
-                TextColor: {R: 240, G: 240, B: 240, A: 255}
-        -   UIElement: !TextBlock
-                Id: 7ed27db7-d8b3-4a58-8073-6bb038fd650f
-                DependencyProperties: {}
-                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
-                HorizontalAlignment: Center
-                VerticalAlignment: Center
-                Margin: {}
-                MaximumWidth: 3.4028235E+38
-                MaximumHeight: 3.4028235E+38
-                MaximumDepth: 3.4028235E+38
-                Text: Click me!
-                Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
-                TextSize: 20.0
-                TextColor: {R: 240, G: 240, B: 240, A: 255}
-        -   UIElement: !TextBlock
-                Id: 853a4dd6-2f48-42e3-8078-cdab8acd3f6c
-                DependencyProperties: {}
-                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
-                HorizontalAlignment: Center
-                VerticalAlignment: Center
-                Margin: {}
-                MaximumWidth: 3.4028235E+38
-                MaximumHeight: 3.4028235E+38
-                MaximumDepth: 3.4028235E+38
-                Text: Click me!
-                Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
-                TextSize: 20.0
-                TextColor: {R: 240, G: 240, B: 240, A: 255}
+                Color: {R: 255, G: 255, B: 255, A: 255}
         -   UIElement: !TextBlock
                 Id: 8c74b615-e667-413b-a62a-ec61dc47eba8
                 DependencyProperties: {}
@@ -290,39 +171,18 @@ Hierarchy:
                 MaximumWidth: 3.4028235E+38
                 MaximumHeight: 3.4028235E+38
                 MaximumDepth: 3.4028235E+38
-                Name: 
-                Content: !TextBlock ref!! 29a65add-d98c-421c-8b0e-b8c11295df02
-                PressedImage: !SpriteFromSheet
-                    Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
-                    CurrentFrame: 2
-                NotPressedImage: !SpriteFromSheet
-                    Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
-                    CurrentFrame: 1
-                MouseOverImage: !SpriteFromSheet
-                    Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
-        -   UIElement: !Button
-                Id: a02e1890-49d2-4857-a5bb-7e3c0e4e0746
+                Content: !ImageElement ref!! f2a69c48-4c5e-45c8-9b5b-2dcd2f73bcbf
+        -   UIElement: !ImageElement
+                Id: 9e7b728a-ebb9-460d-924d-66a909665741
                 DependencyProperties: {}
                 BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
-                Visibility: Hidden
-                DrawLayerNumber: 2
-                Width: 60.0
-                Height: 60.0
-                HorizontalAlignment: Right
-                Margin: {Right: 240.0}
+                HorizontalAlignment: Center
+                VerticalAlignment: Center
+                Margin: {}
                 MaximumWidth: 3.4028235E+38
                 MaximumHeight: 3.4028235E+38
                 MaximumDepth: 3.4028235E+38
-                Name: 
-                Content: !TextBlock ref!! 07cbd48b-99dc-4ac0-b4c0-b32721cdd97e
-                PressedImage: !SpriteFromSheet
-                    Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
-                    CurrentFrame: 2
-                NotPressedImage: !SpriteFromSheet
-                    Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
-                    CurrentFrame: 1
-                MouseOverImage: !SpriteFromSheet
-                    Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
+                Color: {R: 255, G: 255, B: 255, A: 255}
         -   UIElement: !TextBlock
                 Id: a072adaf-35fc-483e-bc4e-9875fb5f219b
                 DependencyProperties: {}
@@ -350,7 +210,6 @@ Hierarchy:
                 MaximumHeight: 3.4028235E+38
                 MaximumDepth: 3.4028235E+38
                 Name: 
-                Content: !TextBlock ref!! d74fd739-6dda-41ab-befb-04fabe525410
                 PressedImage: !SpriteFromSheet
                     Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
                     CurrentFrame: 2
@@ -372,92 +231,9 @@ Hierarchy:
                 MaximumWidth: 3.4028235E+38
                 MaximumHeight: 3.4028235E+38
                 MaximumDepth: 3.4028235E+38
-                Name: 
-                Content: !TextBlock ref!! bc46b418-11e4-4c99-8800-689d19c1a115
-                PressedImage: !SpriteFromSheet
-                    Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
-                    CurrentFrame: 2
-                NotPressedImage: !SpriteFromSheet
-                    Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
-                    CurrentFrame: 1
-                MouseOverImage: !SpriteFromSheet
-                    Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
-        -   UIElement: !Button
-                Id: b978156c-86a4-4f8b-9dcf-1b7cac22dde1
-                DependencyProperties: {}
-                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
-                Visibility: Hidden
-                DrawLayerNumber: 2
-                Width: 60.0
-                Height: 60.0
-                HorizontalAlignment: Right
-                Margin: {}
-                MaximumWidth: 3.4028235E+38
-                MaximumHeight: 3.4028235E+38
-                MaximumDepth: 3.4028235E+38
-                Name: 
-                Content: !TextBlock ref!! 853a4dd6-2f48-42e3-8078-cdab8acd3f6c
-                PressedImage: !SpriteFromSheet
-                    Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
-                    CurrentFrame: 2
-                NotPressedImage: !SpriteFromSheet
-                    Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
-                    CurrentFrame: 1
-                MouseOverImage: !SpriteFromSheet
-                    Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
-        -   UIElement: !TextBlock
-                Id: ba73447a-2682-45c9-bba7-f55fba9baf13
-                DependencyProperties: {}
-                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
-                HorizontalAlignment: Center
-                VerticalAlignment: Center
-                Margin: {}
-                MaximumWidth: 3.4028235E+38
-                MaximumHeight: 3.4028235E+38
-                MaximumDepth: 3.4028235E+38
-                Text: Click me!
-                Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
-                TextSize: 20.0
-                TextColor: {R: 240, G: 240, B: 240, A: 255}
-        -   UIElement: !TextBlock
-                Id: bc46b418-11e4-4c99-8800-689d19c1a115
-                DependencyProperties: {}
-                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
-                HorizontalAlignment: Center
-                VerticalAlignment: Center
-                Margin: {}
-                MaximumWidth: 3.4028235E+38
-                MaximumHeight: 3.4028235E+38
-                MaximumDepth: 3.4028235E+38
-                Text: Click me!
-                Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
-                TextSize: 20.0
-                TextColor: {R: 240, G: 240, B: 240, A: 255}
-        -   UIElement: !Button
-                Id: bd2b8836-28fd-45f0-877a-5afdae0f5391
-                DependencyProperties: {}
-                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
-                Visibility: Hidden
-                DrawLayerNumber: 2
-                Width: 60.0
-                Height: 60.0
-                HorizontalAlignment: Right
-                Margin: {Right: 180.0}
-                MaximumWidth: 3.4028235E+38
-                MaximumHeight: 3.4028235E+38
-                MaximumDepth: 3.4028235E+38
-                Name: 
-                Content: !TextBlock ref!! ba73447a-2682-45c9-bba7-f55fba9baf13
-                PressedImage: !SpriteFromSheet
-                    Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
-                    CurrentFrame: 2
-                NotPressedImage: !SpriteFromSheet
-                    Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
-                    CurrentFrame: 1
-                MouseOverImage: !SpriteFromSheet
-                    Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
-        -   UIElement: !Button
-                Id: d38c09b6-9011-4044-a846-fef9736d99ed
+                Content: !ImageElement ref!! 7cf1aa86-a1f6-40e1-9237-4b6f19024549
+        -   UIElement: !Border
+                Id: e570a15b-3177-4b78-b101-be0aee1f35fb
                 DependencyProperties: {}
                 BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
                 Visibility: Hidden
@@ -465,22 +241,16 @@ Hierarchy:
                 Width: 60.0
                 Height: 60.0
                 HorizontalAlignment: Left
-                Margin: {Left: 180.0}
+                Margin: {Left: 60.0}
                 MaximumWidth: 3.4028235E+38
                 MaximumHeight: 3.4028235E+38
                 MaximumDepth: 3.4028235E+38
-                Name: 
-                Content: !TextBlock ref!! 7ed27db7-d8b3-4a58-8073-6bb038fd650f
-                PressedImage: !SpriteFromSheet
-                    Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
-                    CurrentFrame: 2
-                NotPressedImage: !SpriteFromSheet
-                    Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
-                    CurrentFrame: 1
-                MouseOverImage: !SpriteFromSheet
-                    Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
-        -   UIElement: !TextBlock
-                Id: d74fd739-6dda-41ab-befb-04fabe525410
+                Padding: {}
+                Content: !ImageElement ref!! 9e7b728a-ebb9-460d-924d-66a909665741
+                BorderColor: {R: 0, G: 255, B: 0, A: 255}
+                BorderThickness: {Left: 1.0, Top: 1.0, Right: 1.0, Bottom: 1.0}
+        -   UIElement: !ImageElement
+                Id: eb492145-8925-48c2-9096-aeb95bd836fc
                 DependencyProperties: {}
                 BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
                 HorizontalAlignment: Center
@@ -489,7 +259,26 @@ Hierarchy:
                 MaximumWidth: 3.4028235E+38
                 MaximumHeight: 3.4028235E+38
                 MaximumDepth: 3.4028235E+38
-                Text: Click me!
-                Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
-                TextSize: 20.0
-                TextColor: {R: 240, G: 240, B: 240, A: 255}
+                Color: {R: 255, G: 255, B: 255, A: 255}
+        -   UIElement: !ImageElement
+                Id: ec8c5f1f-e210-4452-87b7-43a06f2408a4
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                HorizontalAlignment: Center
+                VerticalAlignment: Center
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Color: {R: 255, G: 255, B: 255, A: 255}
+        -   UIElement: !ImageElement
+                Id: f2a69c48-4c5e-45c8-9b5b-2dcd2f73bcbf
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                HorizontalAlignment: Center
+                VerticalAlignment: Center
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Color: {R: 255, G: 255, B: 255, A: 255}

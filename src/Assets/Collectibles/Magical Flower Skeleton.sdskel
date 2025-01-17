@@ -2,7 +2,7 @@
 Id: b311f2bd-132f-40cb-b1ea-20fcd2cc9480
 SerializedVersion: {Stride: 2.0.0.0}
 Tags: []
-Source: !file G:/My Drive/Dev/Assets/Models/Animated/Magical Flower/magical flower_rigged_animated _blue crystal.fbx
+Source: !file ../Graphics/Collectibles/Magical Flower/Magical Flower.fbx
 PivotPosition: {X: 0.0, Y: 0.0, Z: 0.0}
 Nodes:
     bd4584401ea9bed9361a27efa1a49e70: {Name: RootNode, Depth: 0}
@@ -173,5 +173,4 @@ Nodes:
     9be7554fb0a2f794309de6fb4ac996b8: {Name: Cylinder.035, Depth: 1}
     cb2d39e70d38828c927a4a799c354f3d: {Name: Cylinder.036, Depth: 1}
 ~SourceHashes:
-    ? 5a04562da378eb370091ad50a8a7cb84~G:/My Drive/Dev/Assets/Models/Animated/Magical Flower/magical flower_rigged_animated _blue crystal.fbx
-    : a5f0055b15450b22a711431c7f1b6345
+    923783cb0d535ecb51587f48e4a7cae5~../Graphics/Collectibles/Magical Flower/Magical Flower.fbx: a5f0055b15450b22a711431c7f1b6345

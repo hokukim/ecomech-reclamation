@@ -1,0 +1,15 @@
+!SpriteSheet
+Id: 381af4c3-5d3e-408a-98dd-2a277c84f41b
+SerializedVersion: {Stride: 2.0.0.0}
+Tags: []
+Type: UI
+ColorKeyColor: {R: 255, G: 0, B: 255, A: 255}
+Packing: {}
+Sprites:
+    122ffbd9ff1cde766528ae7f214cda49:
+        Source: !file ../../Graphics/Collectibles/Magical Flower/Magical Flower.png
+        Name: Magical Flower
+        TextureRegion: {X: 0, Y: 0, Width: 640, Height: 640}
+        Center: {X: 0.0, Y: 0.0}
+        Borders: {X: 0.0, Y: 0.0, Z: 0.0, W: 0.0}
+        BorderColor: {R: 0, G: 0, B: 0, A: 0}

@@ -1,8 +1,13 @@
-﻿using EcomechReclamation.Player;
+﻿using EcomechReclamation.Collisions;
+using EcomechReclamation.Player;
+using Stride.Core.Mathematics;
 using Stride.Engine;
 using Stride.Engine.Events;
+using Stride.Graphics;
+using Stride.Rendering.Sprites;
 using Stride.UI;
 using Stride.UI.Controls;
+using System;
 using System.Linq;
 
 namespace EcomechReclamation;
@@ -10,19 +15,31 @@ namespace EcomechReclamation;
 public class InventoryController : SyncScript
 {
     /// <summary>
-    /// Receives <see cref="PlayerInput.ToggleInventoryEventKey"/> events.
+    /// Occurs when an item is being collected into inventory.
+    /// </summary>
+    public static EventKey<Entity> CollectEntityEvent = new();
+
+    /// <summary>
+    /// Receives an event when the toggle inventory event key is triggered.
     /// </summary>
     private EventReceiver ToggleInventoryEvent { get; init; } = new(PlayerInput.ToggleInventoryEventKey);
 
+    private EventReceiver<Entity> CollectiblePlayerCollisionAddEvent { get; init; } = new(CollectibleCollisionTrigger.CollectiblePlayerAddCollisionEvenKey);
+    private EventReceiver<Entity> CollectiblePlayerCollisionRemoveEvent { get; init; } = new(CollectibleCollisionTrigger.CollectiblePlayerRemoveCollisionEvenKey);
+    private Entity CollisionEntity { get; set; }
+
     /// <summary>
-    /// Receives <see cref="CollectEntityEventKey"/> events.
+    /// Receives an event when the player interact key is triggered.
     /// </summary>
-    private EventReceiver<Entity> CollectEntityEvent { get; init; } = new(PlayerController.CollectEntityEventKey);
+    private EventReceiver InteractEvent { get; init; } = new(PlayerInput.InteractEventKey);
 
     /// <summary>
     /// Inventory grid UI.
     /// </summary>
     private UIElement InventoryUI { get; set; }
+
+    Prefab FlowerPrefab { get; set; }
+    private Entity FlowerPrefabEntity { get; set; } = new("flower", new Vector3(-7.178f, 0, 2.539f));
 
     public override void Start()
     {
@@ -30,10 +47,15 @@ public class InventoryController : SyncScript
 
         UIComponent playerUI = Entity.Get<UIComponent>();
         InventoryUI = playerUI.Page.RootElement.FindName(nameof(InventoryUI));
+
+        FlowerPrefab = Content.Load<Prefab>("Magical Flower");
+        AddFlower();
     }
 
     public override void Update()
     {
+        AddCollision();
+        RemoveCollision();
         CollectEntity();
         ToggleInventory();
     }
@@ -51,22 +73,107 @@ public class InventoryController : SyncScript
         InventoryUI.Visibility = InventoryUI.Visibility == Visibility.Visible ? Visibility.Hidden : Visibility.Visible;
     }
 
+    /// <summary>
+    /// Adds an entity to collision.
+    /// </summary>
+    private void AddCollision()
+    {
+        if (!CollectiblePlayerCollisionAddEvent.TryReceive(out Entity entity))
+        {
+            return;
+        }
+
+        CollisionEntity = entity;
+    }
+
+    /// <summary>
+    /// Removes an entity from collision.
+    /// </summary>
+    private void RemoveCollision()
+    {
+        if (!CollectiblePlayerCollisionRemoveEvent.TryReceive(out Entity entity)
+            || CollisionEntity != entity)
+        {
+            return;
+        }
+
+        CollisionEntity = null;
+    }
+
     private void CollectEntity()
     {
-        if (!CollectEntityEvent.TryReceive(out Entity entity))
+        if (!InteractEvent.TryReceive())
         {
             return;
         }
 
-        UIElement slot = InventoryUI.VisualChildren.FirstOrDefault(child => !child.IsVisible);
-
-        if (slot == null)
+        if (CollisionEntity == null)
         {
-            // Inventory is full.
+            // Nothing to collect.
             return;
         }
 
-        slot.FindVisualChildOfType<TextBlock>().Text = entity.Name;
-        slot.Visibility = Visibility.Visible;
+        if (PlayerManager.Instance.Inventory.IsFull)
+        {
+            return;
+        }
+
+        Border uiSlot = InventoryUI.FindVisualChildrenOfType<Border>().FirstOrDefault(child => child.Visibility != Visibility.Visible);
+
+        if (uiSlot == null)
+        {
+            // UI inventory is full.
+            return;
+        }
+
+        // Add item to inventory.
+        if (!PlayerManager.Instance.Inventory.TryAddItem(CollisionEntity.Name, out Slot itemSlot))
+        {
+            // Could not add item to inventory.
+            return;
+        }
+
+        CollectEntityEvent.Broadcast(CollisionEntity);
+        RemoveEntity(CollisionEntity);
+        CollisionEntity = null;
+
+        // Display border.
+        uiSlot.Visibility = Visibility.Visible;
+
+        // Display image.
+        ImageElement image = uiSlot.FindVisualChildOfType<ImageElement>();
+        image.Source = new SpriteFromSheet
+        {
+            Sheet = Content.Load<SpriteSheet>($"Sprites/Collectibles/{itemSlot.ItemName} spritesheet")
+        };
+
+        AddFlower();
+    }
+
+    /// <summary>
+    /// Removes an entity from the scene.
+    /// </summary>
+    /// <param name="entity">The entity to remove.</param>
+    private void RemoveEntity(Entity entity)
+    {
+        foreach (Entity child in entity.GetChildren())
+        {
+            entity.RemoveChild(child);
+        }
+
+        Entity parent = entity.GetParent();
+        Entity.Scene.Entities.Remove(parent);
+    }
+
+    private void AddFlower()
+    {
+        float x = new Random().Next() % 2 == 0 ? 1f : -1f;
+        FlowerPrefabEntity.Transform.Position.X += x;
+        foreach (Entity childEntity in FlowerPrefab.Instantiate()
+            .Where(entity => FlowerPrefabEntity.FindChild(entity.Name) == null))
+        {
+            FlowerPrefabEntity.AddChild(childEntity);
+        }
+        Entity.Scene.Entities.Add(FlowerPrefabEntity);
     }
 }

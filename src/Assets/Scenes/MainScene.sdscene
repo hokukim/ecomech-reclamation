@@ -2384,7 +2384,7 @@ Hierarchy:
                         AnimationJumpStart: 2eaec361-7d4c-499e-bcaf-a07f90b3312a:Animations/Jump_Start
                         AnimationJumpMid: c8dff12f-fd48-45de-a643-ef98be0c3b13:Animations/Jump_Loop
                         AnimationJumpEnd: 5a08f982-b3b4-40f3-8b75-0244b4bbeb24:Animations/Jump_End
-                        AnimationHarvest: c564bf92-801e-4d9d-883c-3b8a4125c14f:Animations/Harvest
+                        AnimationCollect: c564bf92-801e-4d9d-883c-3b8a4125c14f:Animations/Collect
                         WalkThreshold: 0.25
                         TimeFactor: 1.0
                     5847b2c0adfcf347a100f94d96c5d325: !AnimationComponent
