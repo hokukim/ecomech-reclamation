@@ -7,6 +7,7 @@ using Stride.Graphics;
 using Stride.Rendering.Sprites;
 using Stride.UI;
 using Stride.UI.Controls;
+using Stride.UI.Panels;
 using System;
 using System.Linq;
 
@@ -41,12 +42,16 @@ public class InventoryController : SyncScript
     Prefab FlowerPrefab { get; set; }
     private Entity FlowerPrefabEntity { get; set; } = new("flower", new Vector3(-7.178f, 0, 2.539f));
 
+    private Grid VacantGrid { get; set; }
+
+
     public override void Start()
     {
         base.Start();
 
         UIComponent playerUI = Entity.Get<UIComponent>();
         InventoryUI = playerUI.Page.RootElement.FindName(nameof(InventoryUI));
+        VacantGrid = GetVacantGrid();
 
         FlowerPrefab = Content.Load<Prefab>("Magical Flower");
         AddFlower();
@@ -118,34 +123,36 @@ public class InventoryController : SyncScript
             return;
         }
 
-        Border uiSlot = InventoryUI.FindVisualChildrenOfType<Border>().FirstOrDefault(child => child.Visibility != Visibility.Visible);
-
-        if (uiSlot == null)
-        {
-            // UI inventory is full.
-            return;
-        }
-
         // Add item to inventory.
-        if (!PlayerManager.Instance.Inventory.TryAddItem(CollisionEntity.Name, out Slot itemSlot))
+        InventoryManager inventory = PlayerManager.Instance.Inventory;
+        if (!inventory.TryAddItem(CollisionEntity.Name, out Slot itemSlot))
         {
             // Could not add item to inventory.
             return;
         }
 
+        if (itemSlot.ItemCount == 1)
+        {
+            // Add new item to inventory UI.
+            ImageElement imageElement = VacantGrid.FindVisualChildOfType<ImageElement>();
+            imageElement.Source = new SpriteFromSheet
+            {
+                Sheet = Content.Load<SpriteSheet>($"Sprites/Collectibles/{itemSlot.ItemName} spritesheet")
+            };
+
+            VacantGrid.Name = itemSlot.ItemName;
+            VacantGrid = GetVacantGrid();
+        }
+        else
+        {
+            // Increase existing item count in inventory UI.
+            Grid grid = GetOccupiedGrid(itemSlot.ItemName);
+            grid.FindVisualChildOfType<TextBlock>().Text = itemSlot.ItemCount.ToString();
+        }
+
         CollectEntityEvent.Broadcast(CollisionEntity);
         RemoveEntity(CollisionEntity);
         CollisionEntity = null;
-
-        // Display border.
-        uiSlot.Visibility = Visibility.Visible;
-
-        // Display image.
-        ImageElement image = uiSlot.FindVisualChildOfType<ImageElement>();
-        image.Source = new SpriteFromSheet
-        {
-            Sheet = Content.Load<SpriteSheet>($"Sprites/Collectibles/{itemSlot.ItemName} spritesheet")
-        };
 
         AddFlower();
     }
@@ -176,4 +183,15 @@ public class InventoryController : SyncScript
         }
         Entity.Scene.Entities.Add(FlowerPrefabEntity);
     }
+
+    private Grid GetVacantGrid() =>
+        InventoryUI
+            .FindVisualChildrenOfType<Grid>()
+            .Where(grid => grid.FindVisualChildrenOfType<ImageElement>() != null)
+            .FirstOrDefault();
+
+    private Grid GetOccupiedGrid(string name) =>
+        InventoryUI
+            .FindVisualChildrenOfType<Grid>()
+            .FirstOrDefault(grid => string.Equals(grid.Name, name));
 }

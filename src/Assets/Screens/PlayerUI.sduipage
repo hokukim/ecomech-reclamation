@@ -8,6 +8,25 @@ Hierarchy:
     RootParts:
         - !Grid ref!! 6befcc24-a656-4bf8-92a0-91f75e67fdc6
     Parts:
+        -   UIElement: !TextBlock
+                Id: 07c615f8-8008-48d7-aea3-e3d6259d9f5c
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Width: 24.0
+                Height: 24.0
+                HorizontalAlignment: Right
+                VerticalAlignment: Bottom
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Text: 
+                Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
+                TextSize: 20.0
+                TextColor: {R: 255, G: 255, B: 255, A: 255}
+                OutlineColor: {R: 0, G: 0, B: 0, A: 255}
+                OutlineThickness: 0.0
+                TextAlignment: Center
         -   UIElement: !ImageElement
                 Id: 0f84c39d-303a-4c97-b933-1e114f96ef39
                 DependencyProperties: {}
@@ -23,7 +42,6 @@ Hierarchy:
                 Id: 452afe4e-81b3-4a66-bf6a-2592ac813a67
                 DependencyProperties: {}
                 BackgroundColor: {R: 255, G: 255, B: 255, A: 255}
-                Visibility: Hidden
                 Width: 720.0
                 Height: 60.0
                 VerticalAlignment: Bottom
@@ -33,65 +51,33 @@ Hierarchy:
                 MaximumDepth: 3.4028235E+38
                 Name: InventoryUI
                 Children:
-                    01d4d0885cc8f980032da0e5e1b2757f: !Border ref!! 64b8a5d7-7793-4b3b-9f5b-abdf1d7f4ba4
-                    fbc8948db274b413a609a6db23c6c36f: !Border ref!! e570a15b-3177-4b78-b101-be0aee1f35fb
-                    74190fba115235b3e63df743c2f9b9ed: !Border ref!! 654c9c48-ec8d-4a9f-9f00-e465f0a89d58
-                    37147dd643fc58a2e4e2b99c2928d9a1: !Border ref!! 57c6f460-1caf-459d-a703-ad6628366590
-                    b8dfd5733a65de067c06f3a5700f6410: !Border ref!! 48dd1f13-d9bc-441f-8005-3dc417fa3063
+                    e0a974715f7a29153089cf51bbb90ec6: !Grid ref!! 620dd5d2-3e9a-4e09-a4c0-ee5b5d367470
+                RowDefinitions: {}
+                ColumnDefinitions: {}
+                LayerDefinitions: {}
+        -   UIElement: !Grid
+                Id: 620dd5d2-3e9a-4e09-a4c0-ee5b5d367470
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                CanBeHitByUser: true
+                Width: 60.0
+                Height: 60.0
+                HorizontalAlignment: Left
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Children:
+                    7c01b12120c9da9719d957e27c7df317: !ImageElement ref!! 0f84c39d-303a-4c97-b933-1e114f96ef39
+                    9af179e28d68d96d75f516a061d6b02a: !TextBlock ref!! 07c615f8-8008-48d7-aea3-e3d6259d9f5c
+                    b1e9ff8d1f36fced240e47c1ab075f95: !Border ref!! 64b8a5d7-7793-4b3b-9f5b-abdf1d7f4ba4
                 RowDefinitions: {}
                 ColumnDefinitions: {}
                 LayerDefinitions: {}
         -   UIElement: !Border
-                Id: 48dd1f13-d9bc-441f-8005-3dc417fa3063
-                DependencyProperties: {}
-                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
-                Visibility: Hidden
-                DrawLayerNumber: 2
-                Width: 60.0
-                Height: 60.0
-                HorizontalAlignment: Left
-                Margin: {Left: 240.0}
-                MaximumWidth: 3.4028235E+38
-                MaximumHeight: 3.4028235E+38
-                MaximumDepth: 3.4028235E+38
-                Padding: {}
-                Content: !ImageElement ref!! ec8c5f1f-e210-4452-87b7-43a06f2408a4
-                BorderColor: {R: 0, G: 255, B: 0, A: 255}
-                BorderThickness: {Left: 1.0, Top: 1.0, Right: 1.0, Bottom: 1.0}
-        -   UIElement: !ImageElement
-                Id: 4a39f60a-f2c5-4175-846b-ed15a528f3d6
-                DependencyProperties: {}
-                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
-                HorizontalAlignment: Center
-                VerticalAlignment: Center
-                Margin: {}
-                MaximumWidth: 3.4028235E+38
-                MaximumHeight: 3.4028235E+38
-                MaximumDepth: 3.4028235E+38
-                Color: {R: 255, G: 255, B: 255, A: 255}
-        -   UIElement: !Border
-                Id: 57c6f460-1caf-459d-a703-ad6628366590
-                DependencyProperties: {}
-                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
-                Visibility: Hidden
-                DrawLayerNumber: 2
-                Width: 60.0
-                Height: 60.0
-                HorizontalAlignment: Left
-                Margin: {Left: 180.0}
-                MaximumWidth: 3.4028235E+38
-                MaximumHeight: 3.4028235E+38
-                MaximumDepth: 3.4028235E+38
-                Padding: {}
-                Content: !ImageElement ref!! 4a39f60a-f2c5-4175-846b-ed15a528f3d6
-                BorderColor: {R: 0, G: 255, B: 0, A: 255}
-                BorderThickness: {Left: 1.0, Top: 1.0, Right: 1.0, Bottom: 1.0}
-        -   UIElement: !Border
                 Id: 64b8a5d7-7793-4b3b-9f5b-abdf1d7f4ba4
                 DependencyProperties: {}
                 BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
-                Visibility: Hidden
-                DrawLayerNumber: 2
                 Width: 60.0
                 Height: 60.0
                 HorizontalAlignment: Left
@@ -100,23 +86,6 @@ Hierarchy:
                 MaximumHeight: 3.4028235E+38
                 MaximumDepth: 3.4028235E+38
                 Padding: {}
-                Content: !ImageElement ref!! 0f84c39d-303a-4c97-b933-1e114f96ef39
-                BorderColor: {R: 0, G: 255, B: 0, A: 255}
-                BorderThickness: {Left: 1.0, Top: 1.0, Right: 1.0, Bottom: 1.0}
-        -   UIElement: !Border
-                Id: 654c9c48-ec8d-4a9f-9f00-e465f0a89d58
-                DependencyProperties: {}
-                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
-                Visibility: Hidden
-                Width: 60.0
-                Height: 60.0
-                HorizontalAlignment: Left
-                Margin: {Left: 120.0}
-                MaximumWidth: 3.4028235E+38
-                MaximumHeight: 3.4028235E+38
-                MaximumDepth: 3.4028235E+38
-                Padding: {}
-                Content: !ImageElement ref!! eb492145-8925-48c2-9096-aeb95bd836fc
                 BorderColor: {R: 0, G: 255, B: 0, A: 255}
                 BorderThickness: {Left: 1.0, Top: 1.0, Right: 1.0, Bottom: 1.0}
         -   UIElement: !Grid
@@ -129,8 +98,9 @@ Hierarchy:
                 MaximumDepth: 3.4028235E+38
                 Name: HUDGrid
                 Children:
-                    6c8a469aed2d5659bc73cf871ffd015c: !Grid ref!! 452afe4e-81b3-4a66-bf6a-2592ac813a67
-                RowDefinitions: {}
+                    0602288373f61a3f36c1a543cfc77b01: !Grid ref!! 452afe4e-81b3-4a66-bf6a-2592ac813a67
+                RowDefinitions:
+                    90f3307006e0e2259bb169532f7ea761: {}
                 ColumnDefinitions: {}
                 LayerDefinitions: {}
         -   UIElement: !ImageElement
@@ -158,6 +128,8 @@ Hierarchy:
                 Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
                 TextSize: 20.0
                 TextColor: {R: 240, G: 240, B: 240, A: 255}
+                OutlineColor: {R: 0, G: 0, B: 0, A: 255}
+                OutlineThickness: 0.0
         -   UIElement: !Button
                 Id: 968fd80d-fef8-45ef-879c-51d7d66f0ff0
                 DependencyProperties: {}
@@ -172,17 +144,6 @@ Hierarchy:
                 MaximumHeight: 3.4028235E+38
                 MaximumDepth: 3.4028235E+38
                 Content: !ImageElement ref!! f2a69c48-4c5e-45c8-9b5b-2dcd2f73bcbf
-        -   UIElement: !ImageElement
-                Id: 9e7b728a-ebb9-460d-924d-66a909665741
-                DependencyProperties: {}
-                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
-                HorizontalAlignment: Center
-                VerticalAlignment: Center
-                Margin: {}
-                MaximumWidth: 3.4028235E+38
-                MaximumHeight: 3.4028235E+38
-                MaximumDepth: 3.4028235E+38
-                Color: {R: 255, G: 255, B: 255, A: 255}
         -   UIElement: !TextBlock
                 Id: a072adaf-35fc-483e-bc4e-9875fb5f219b
                 DependencyProperties: {}
@@ -197,6 +158,8 @@ Hierarchy:
                 Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
                 TextSize: 20.0
                 TextColor: {R: 240, G: 240, B: 240, A: 255}
+                OutlineColor: {R: 0, G: 0, B: 0, A: 255}
+                OutlineThickness: 0.0
         -   UIElement: !Button
                 Id: a82157ba-d465-4aac-851d-6fe86c837c40
                 DependencyProperties: {}
@@ -232,45 +195,6 @@ Hierarchy:
                 MaximumHeight: 3.4028235E+38
                 MaximumDepth: 3.4028235E+38
                 Content: !ImageElement ref!! 7cf1aa86-a1f6-40e1-9237-4b6f19024549
-        -   UIElement: !Border
-                Id: e570a15b-3177-4b78-b101-be0aee1f35fb
-                DependencyProperties: {}
-                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
-                Visibility: Hidden
-                DrawLayerNumber: 2
-                Width: 60.0
-                Height: 60.0
-                HorizontalAlignment: Left
-                Margin: {Left: 60.0}
-                MaximumWidth: 3.4028235E+38
-                MaximumHeight: 3.4028235E+38
-                MaximumDepth: 3.4028235E+38
-                Padding: {}
-                Content: !ImageElement ref!! 9e7b728a-ebb9-460d-924d-66a909665741
-                BorderColor: {R: 0, G: 255, B: 0, A: 255}
-                BorderThickness: {Left: 1.0, Top: 1.0, Right: 1.0, Bottom: 1.0}
-        -   UIElement: !ImageElement
-                Id: eb492145-8925-48c2-9096-aeb95bd836fc
-                DependencyProperties: {}
-                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
-                HorizontalAlignment: Center
-                VerticalAlignment: Center
-                Margin: {}
-                MaximumWidth: 3.4028235E+38
-                MaximumHeight: 3.4028235E+38
-                MaximumDepth: 3.4028235E+38
-                Color: {R: 255, G: 255, B: 255, A: 255}
-        -   UIElement: !ImageElement
-                Id: ec8c5f1f-e210-4452-87b7-43a06f2408a4
-                DependencyProperties: {}
-                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
-                HorizontalAlignment: Center
-                VerticalAlignment: Center
-                Margin: {}
-                MaximumWidth: 3.4028235E+38
-                MaximumHeight: 3.4028235E+38
-                MaximumDepth: 3.4028235E+38
-                Color: {R: 255, G: 255, B: 255, A: 255}
         -   UIElement: !ImageElement
                 Id: f2a69c48-4c5e-45c8-9b5b-2dcd2f73bcbf
                 DependencyProperties: {}
